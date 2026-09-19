@@ -1,0 +1,1006 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>C Quest — PPS Learning Portal</title><style>
+:root{--bg:#0b1020;--panel:#121a2b;--panel2:#172238;--line:#273754;--text:#f4f7ff;--muted:#aab7ce;--faint:#72819c;--accent:#8b7cff;--accent2:#38d6b0;--warm:#ffc857;--danger:#ff6d83;--radius:22px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(900px 500px at 85% -10%,#2b2255 0,transparent 60%),radial-gradient(800px 500px at -10% 100%,#103e42 0,transparent 55%),var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer}.hidden{display:none!important}.app{display:grid;grid-template-columns:285px 1fr;min-height:100vh}.rail{position:sticky;top:0;height:100vh;overflow:auto;padding:20px 15px;border-right:1px solid var(--line);background:rgba(8,13,25,.82);backdrop-filter:blur(18px)}.brand{display:flex;gap:10px;align-items:center}.logo{width:44px;height:44px;border-radius:15px;background:linear-gradient(135deg,var(--accent),#35c9ff);display:grid;place-items:center;font-weight:900}.brand h1{font-size:18px;margin:0}.brand small{color:var(--faint)}.student-card{margin:18px 0;padding:14px;border:1px solid var(--line);background:var(--panel);border-radius:17px}.student-card b{display:block}.student-card span{color:var(--muted);font-size:12px}.progress-label{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.bar{height:9px;background:#0b1220;border:1px solid var(--line);border-radius:99px;overflow:hidden;margin-top:7px}.fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent2),#63b7ff);transition:.3s}.nav-title{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--faint);margin:22px 8px 8px}.nav button{width:100%;text-align:left;border:1px solid transparent;background:transparent;color:var(--muted);padding:10px 12px;border-radius:12px;margin-bottom:5px}.nav button:hover,.nav button.active{background:var(--panel2);border-color:var(--line);color:var(--text)}.nav button.done:before{content:'✓ ';color:var(--accent2)}.main{max-width:1180px;width:100%;margin:auto;padding:30px 34px 90px}.topbar{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-bottom:22px}.search{position:relative;flex:1;max-width:620px}.search input{width:100%;padding:13px 16px 13px 42px;border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:999px}.search span{position:absolute;left:16px;top:12px}.pill,.btn{border:1px solid var(--line);background:var(--panel);color:var(--muted);padding:11px 15px;border-radius:12px;font-weight:700}.btn{border-color:transparent;background:linear-gradient(135deg,var(--accent),#5d4ae4);color:white}.btn.secondary{background:var(--panel);border-color:var(--line);color:var(--muted)}.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:15px}.hero-card{padding:30px;border-radius:26px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(139,124,255,.18),rgba(56,214,176,.07))}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--faint)}.hero h2{font-size:42px;line-height:1.04;margin:7px 0 12px}.hero p,.topic p,.topic li{color:var(--muted);line-height:1.7}.metric-grid{display:grid;gap:12px}.metric{padding:20px;border-radius:20px;background:var(--panel);border:1px solid var(--line)}.metric b{font-size:27px}.unit-grid,.topic-grid,.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px}.unit-card,.topic-card{padding:20px;border-radius:20px;background:var(--panel);border:1px solid var(--line);transition:.2s}.unit-card:hover,.topic-card:hover{transform:translateY(-2px);border-color:#52658c}.unit-card h3,.topic-card h3{margin:8px 0 6px}.unit-card p,.topic-card p{font-size:13px;color:var(--muted);line-height:1.55}.unit-icon,.topic-icon{font-size:28px}.topic{display:none}.topic.active{display:block;animation:up .22s ease}@keyframes up{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}.topic-head{margin:10px 0 20px}.topic-head h2{font-size:34px;margin:6px 0}.topic-head p{max-width:900px}.section{padding:20px;border:1px solid var(--line);background:var(--panel);border-radius:20px;margin:14px 0}.analogy,.callout{padding:16px 18px;border-left:4px solid var(--accent2);background:#0f1c22;border-radius:0 15px 15px 0;color:#d6e0ec;line-height:1.7;margin:16px 0}.callout{border-left-color:var(--warm);background:#211b10}.step-list{display:grid;gap:8px}.step{display:grid;grid-template-columns:180px 1fr;gap:10px;padding:12px;border-bottom:1px dashed var(--line)}.step span{color:var(--muted)}.compare{display:flex;gap:15px;align-items:center;justify-content:center;margin:20px 0}.compare>div{padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--panel2);text-align:center}.arrow{font-size:28px!important;border:0!important;background:transparent!important}.info-table{width:100%;border-collapse:collapse}.info-table th,.info-table td{padding:12px;border-bottom:1px solid var(--line);text-align:left}.info-table th{color:var(--faint)}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#dfe7ff}.code-card{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#080d16}.code-head{display:flex;justify-content:space-between;gap:12px;padding:12px 15px;border-bottom:1px solid var(--line);background:#0d1422}.code-head b{font-size:13px}.code-row{display:grid;grid-template-columns:48px 1fr;min-width:700px}.code-row .ln{padding:8px;color:#566783;text-align:right;border-right:1px solid var(--line);background:#0b111c;font:12px ui-monospace,monospace}.code-row pre{margin:0;padding:8px 12px;white-space:pre-wrap;color:#e6ecff;font:12.5px/1.6 ui-monospace,monospace}.explain{display:none;padding:10px 14px 14px;color:#a9e9d7;background:#0c1817;border-top:1px dashed #27463e;font-size:12px;line-height:1.55}.code-card.explained .explain{display:block}.io{margin-top:12px;padding:14px;border:1px solid #23483f;background:#0c1817;color:#9ee8cf;border-radius:15px;white-space:pre-wrap;font:12px/1.6 ui-monospace,monospace}.lab-card{border:1px solid #554d25;background:linear-gradient(145deg,#211e12,#151925);padding:18px;border-radius:18px;margin-top:16px}.lab-badge{display:inline-flex;padding:5px 8px;border-radius:999px;background:#3a3217;color:#ffd76a;font-size:11px;font-weight:800}.quiz{padding:20px;border:1px solid var(--line);background:var(--panel);border-radius:20px}.qnum{color:var(--faint);font-size:11px;text-transform:uppercase;letter-spacing:.12em}.option{width:100%;text-align:left;padding:12px 14px;margin:8px 0;border:1px solid var(--line);border-radius:13px;background:#0c1320;color:var(--text)}.option:hover{border-color:#60749e}.option.good{border-color:var(--accent2);background:#0d241d}.option.bad{border-color:var(--danger);background:#29131a}.coach{padding:13px;margin-top:12px;border-radius:13px;background:#111a29;color:var(--muted);line-height:1.6}.report-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}.report-card{padding:18px;border:1px solid var(--line);background:var(--panel);border-radius:18px}.report-card b{font-size:27px}.report-table{width:100%;border-collapse:collapse}.report-table th,.report-table td{padding:11px;border-bottom:1px solid var(--line);text-align:left;font-size:13px}.modal-wrap{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:100;display:none;place-items:center;padding:20px}.modal-wrap.open{display:grid}.modal{max-width:620px;width:100%;padding:24px;border-radius:23px;border:1px solid var(--line);background:var(--panel);box-shadow:0 30px 100px rgba(0,0,0,.55)}.modal input,.modal textarea,.modal select{width:100%;padding:12px;margin:6px 0 12px;background:#0b111c;border:1px solid var(--line);color:var(--text);border-radius:12px}.toast{position:fixed;right:20px;bottom:20px;z-index:150;padding:12px 16px;border-radius:13px;background:#101a28;border:1px solid var(--line);display:none}.toast.show{display:block}.resume-banner{padding:15px 18px;margin:15px 0;border:1px solid #315d55;background:#0e1f1d;border-radius:17px;color:#bcecdf}.resume-banner b{color:white}
+.compiler-shell{margin-top:16px;border:1px solid #315d55;background:linear-gradient(145deg,#0d1c1b,#101728);border-radius:20px;overflow:hidden}.compiler-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line)}.compiler-top h3{margin:0;font-size:16px}.compiler-top p{margin:4px 0 0;color:var(--muted);font-size:12px}.compiler-actions{display:flex;gap:8px;flex-wrap:wrap}.compiler-frame{width:100%;height:620px;border:0;background:white;display:block}.compiler-note{padding:10px 14px;color:var(--faint);font-size:11px;border-top:1px solid var(--line)}.practice-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.practice-prompt{padding:15px 17px;border:1px dashed #3b4b68;border-radius:16px;background:#0d1422}.practice-prompt b{color:var(--text)}.coverage{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.coverage span{padding:5px 8px;border-radius:999px;border:1px solid var(--line);background:#0d1422;color:var(--muted);font-size:11px}.status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#52627d;margin-right:6px}.status-dot.live{background:var(--accent2)}
+@media(max-width:900px){.app{grid-template-columns:1fr}.rail{position:relative;height:auto;border-right:0;border-bottom:1px solid var(--line)}.hero{grid-template-columns:1fr}.main{padding:22px 16px 60px}.step{grid-template-columns:1fr}.compare{flex-direction:column}.topbar{flex-direction:column;align-items:stretch}.search{max-width:none}}
+
+/* C QUEST 3-PART LESSON UI */
+.lesson-shell{margin-top:18px}.lesson-tabs{position:sticky;top:10px;z-index:20;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:8px;background:rgba(11,16,32,.88);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:18px;margin-bottom:18px}.lesson-tab{border:1px solid transparent;background:transparent;color:var(--muted);padding:12px 10px;border-radius:13px;font-weight:800}.lesson-tab.active{background:linear-gradient(135deg,rgba(139,124,255,.24),rgba(56,214,176,.12));border-color:#41506f;color:var(--text)}.lesson-panel{display:none}.lesson-panel.active{display:block;animation:up .18s ease}.learn-map{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:14px 0}.learn-step{padding:15px;border:1px solid var(--line);border-radius:16px;background:var(--panel2)}.learn-step .num{font-size:11px;color:var(--accent2);font-weight:900}.learn-step b{display:block;margin:5px 0}.lab-stack{display:grid;gap:12px}.lab-program{padding:17px;border:1px solid #554d25;border-radius:17px;background:linear-gradient(145deg,#211e12,#151925)}.lab-program h4{margin:8px 0}.lab-program p{margin:6px 0}.lab-exact{display:inline-block;padding:5px 9px;border-radius:999px;background:#3a3217;color:#ffd76a;font-size:11px;font-weight:900}.practice-card{padding:18px;border:1px solid #315d55;border-radius:18px;background:linear-gradient(145deg,#0d1c1b,#101728)}.empty-state{padding:28px;text-align:center;border:1px dashed var(--line);border-radius:18px;color:var(--muted)}.topic-intro{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:stretch}.topic-kicker{padding:15px 17px;border:1px solid var(--line);background:var(--panel);border-radius:17px}.topic-kicker b{display:block;font-size:20px}.topic-kicker span{font-size:12px;color:var(--muted)}.session-strip{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}.session-chip{padding:7px 10px;border-radius:999px;background:#0d1422;border:1px solid var(--line);font-size:11px;color:var(--muted)}.session-chip strong{color:var(--text)}
+@media(max-width:700px){.lesson-tabs{grid-template-columns:repeat(2,1fr)}.topic-intro{grid-template-columns:1fr}.lesson-tab{font-size:12px}}
+
+/* C QUEST PRODUCTION UI REFRESH */
+.app{grid-template-columns:300px minmax(0,1fr)}
+.rail{padding:22px 16px;background:linear-gradient(180deg,rgba(8,13,25,.98),rgba(12,19,35,.96));}
+.brand{padding:2px 4px 10px}.logo{width:48px;height:48px;font-size:22px;box-shadow:0 12px 35px rgba(99,183,255,.18)}
+.student-card{background:linear-gradient(145deg,#151f34,#101827);padding:16px;border-radius:20px;box-shadow:inset 0 1px rgba(255,255,255,.04)}
+.student-card b{font-size:15px}.student-card span{display:block;margin-top:4px}
+.progress-wrap{margin:16px 3px 10px}.progress-label{font-size:12px}.bar{height:8px}
+.nav-title{margin-top:24px}.nav button{font-size:13px;padding:11px 12px;line-height:1.35}
+.main{max-width:1280px;padding:28px 42px 100px}
+.topbar{margin-bottom:18px}.search input{height:52px;font-size:14px}.topbar>.pill{height:52px;display:flex;align-items:center;white-space:nowrap}
+.dashboard-shell{display:grid;gap:20px}.welcome-hero{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(260px,.65fr);gap:16px}.welcome-card{padding:30px;border:1px solid #2d3e61;border-radius:28px;background:radial-gradient(500px 250px at 100% 0,rgba(139,124,255,.22),transparent 65%),linear-gradient(145deg,#141f35,#0e1728);position:relative;overflow:hidden}.welcome-card:after{content:'</>';position:absolute;right:28px;bottom:-18px;font:900 110px/1 ui-monospace;color:rgba(255,255,255,.025)}
+.welcome-card h2{font-size:38px;line-height:1.08;margin:8px 0 10px}.welcome-card p{max-width:720px}.welcome-kicker{display:inline-flex;padding:6px 10px;border-radius:999px;background:#172641;border:1px solid #30456b;color:#a9c5ff;font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+.resume-box{margin-top:18px;padding:15px 17px;border-radius:17px;background:#0d1d22;border:1px solid #2d5b52}.resume-box small{display:block;color:#7f9caa;text-transform:uppercase;letter-spacing:.1em;font-size:10px;margin-bottom:4px}.resume-box b{color:#e8fff8}
+.quick-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.quick-stat{padding:19px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,#131d30,#0f1727)}.quick-stat .num{font-size:30px;font-weight:900}.quick-stat small{color:var(--muted)}
+.section-title{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:4px 2px 10px}.section-title h2{margin:0;font-size:22px}.section-title p{margin:0;color:var(--faint);font-size:12px}
+.unit-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.unit-card{min-height:190px;padding:24px;cursor:pointer;background:linear-gradient(145deg,#151f34,#101827);position:relative;overflow:hidden}.unit-card:after{content:'→';position:absolute;right:20px;bottom:12px;font-size:54px;font-weight:900;color:rgba(255,255,255,.05)}.unit-card:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(0,0,0,.25)}
+.unit-card .unit-meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}.unit-meta span{padding:5px 8px;border-radius:999px;background:#0d1525;border:1px solid var(--line);color:#91a2bd;font-size:10px;font-weight:800}
+.learning-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.flow-card{padding:16px;border:1px solid var(--line);border-radius:17px;background:#111a2a}.flow-card .flow-icon{font-size:22px}.flow-card b{display:block;margin:8px 0 4px}.flow-card span{font-size:12px;color:var(--muted);line-height:1.5}
+.topic-head{padding:8px 0 2px}.topic-intro{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}.topic-kicker{min-width:150px;padding:14px;border:1px solid var(--line);border-radius:18px;background:#10192a;text-align:center}.topic-kicker b{display:block;font-size:13px}.topic-kicker span{display:block;color:var(--faint);font-size:10px;margin-top:5px}.session-strip{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.session-chip{padding:8px 11px;border-radius:12px;background:#111c2e;border:1px solid #293b5c;color:#aab9d2;font-size:11px}.session-chip strong{color:#78e4c5}
+.lesson-shell{margin-top:18px}.lesson-tabs{top:8px;grid-template-columns:repeat(4,1fr);box-shadow:0 12px 30px rgba(0,0,0,.18)}.lesson-tab{font-size:13px}.lesson-tab.active{box-shadow:inset 0 0 0 1px rgba(255,255,255,.03)}
+.lesson-panel>.section{min-height:250px}.learn-intro{padding:20px;border-radius:20px;background:linear-gradient(145deg,#121e31,#101827);border:1px solid var(--line)}
+.topic .lead{font-size:17px;color:#dce7f7}.topic h3{margin-top:22px}.topic .cards>div{padding:15px;border:1px solid var(--line);border-radius:16px;background:#111a2a}.topic .rw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.topic .rw-card{padding:14px;border:1px solid var(--line);border-radius:16px;background:#111a2a}.topic .mini-head{margin-top:20px;font-weight:900;color:#dbe7f8}
+.lab-program{box-shadow:0 10px 28px rgba(0,0,0,.12)}.lab-program p{line-height:1.6}.compiler-shell{margin-top:16px;border:1px solid #2f4b69;border-radius:20px;overflow:hidden;background:#08101c;box-shadow:0 15px 45px rgba(0,0,0,.2)}.compiler-top{padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;background:#101b2c;border-bottom:1px solid var(--line)}.compiler-top h3{margin:0}.compiler-top p{margin:4px 0 0;color:var(--faint);font-size:11px}.compiler-actions{display:flex;gap:8px}.compiler-frame{width:100%;height:520px;border:0;background:#fff}.compiler-note{padding:10px 14px;color:#7588a5;font-size:11px;border-top:1px solid var(--line)}
+.practice-grid{display:grid;grid-template-columns:.65fr 1.35fr;gap:16px}.practice-prompt{padding:18px;border:1px solid #315d55;border-radius:18px;background:linear-gradient(145deg,#0d1c1b,#101728);height:max-content}.practice-prompt b{font-size:18px}.practice-prompt p{color:var(--muted);line-height:1.65}
+.quiz{box-shadow:0 10px 30px rgba(0,0,0,.12)}.option{transition:.15s}.option:hover{transform:translateX(2px)}
+.finish-card{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:20px;border:1px solid #2c4561;border-radius:20px;background:linear-gradient(145deg,#131e32,#0e1727)}
+.empty-state{min-height:150px;display:grid;place-items:center}
+@media(max-width:1000px){.welcome-hero,.practice-grid{grid-template-columns:1fr}.learning-flow{grid-template-columns:repeat(2,1fr)}.topic .rw-grid{grid-template-columns:1fr}.unit-grid{grid-template-columns:1fr}}
+@media(max-width:700px){.main{padding:20px 14px 70px}.topbar>.pill{display:none}.topic-intro{grid-template-columns:1fr}.quick-stats{grid-template-columns:1fr 1fr}.learning-flow{grid-template-columns:1fr 1fr}.lesson-tabs{grid-template-columns:repeat(2,1fr)}.compiler-frame{height:480px}.welcome-card h2{font-size:30px}}
+</style></head><body>
+<div id="login" class="modal-wrap open"><div class="modal"><div class="eyebrow">PROGRAMMING FOR PROBLEM SOLVING · C QUEST</div><h1>Welcome back 👋</h1><p style="color:var(--muted);line-height:1.7">Enter your name and roll number. Your learning record is loaded by roll number, so one student’s progress never becomes another student’s progress.</p><input id="loginName" placeholder="Full Name"><input id="loginRoll" placeholder="Roll Number"><button class="btn" onclick="loginStudent()">Continue learning →</button><p id="loginMsg" style="color:var(--danger)"></p></div></div>
+<div id="app" class="app hidden"><aside class="rail"><div class="brand"><div class="logo">C</div><div><h1>C Quest</h1><small>PPS Learning Portal · Units 1–2</small></div></div><div class="student-card"><b id="studentName">Student</b><span id="studentRoll">Roll</span></div><div><div class="progress-label"><span id="progressText">0% complete</span><span id="progressPct">0%</span></div><div class="bar"><div id="progressFill" class="fill"></div></div></div><div class="nav-title">Dashboard</div><div class="nav"><button onclick="showDashboard()">🏠 My Dashboard</button></div><div class="nav-title">Unit 1 · Foundations</div><div id="nav1" class="nav"></div><div class="nav-title">Unit 2 · Functions & Recursion</div><div id="nav2" class="nav"></div><div class="nav-title">Tools</div><div class="nav"><button onclick="showReport()">📊 My Report</button><button onclick="openFeedback()">🚩 Report a Problem</button><button onclick="logoutStudent()">↪ Change Student</button></div></aside>
+<main class="main"><div class="topbar"><div class="search"><span>⌕</span><input id="search" placeholder="Search Unit 1 or Unit 2 topic…" oninput="searchTopics()"></div><div class="pill">☁️ Progress syncs by roll number</div></div><section id="dashboard"></section><section id="content"></section><section id="report" class="hidden"></section></main></div>
+<div id="feedback" class="modal-wrap"><div class="modal"><div class="eyebrow">STUDENT SUPPORT</div><h2>🚩 Report a Problem</h2><p style="color:var(--muted)">Tell us what went wrong. Your report will be associated with your student record.</p><label>What happened?</label><select id="fbType"><option>Content is unclear</option><option>Wrong answer or explanation</option><option>Program/code issue</option><option>Page/UI issue</option><option>Other</option></select><label>Details</label><textarea id="fbText" rows="5" placeholder="Example: In the pointer topic, the explanation of *p confused me..."></textarea><div class="row" style="display:flex;gap:10px"><button class="btn" onclick="submitFeedback()">Send report</button><button class="btn secondary" onclick="closeFeedback()">Cancel</button></div></div></div><div id="toast" class="toast"></div>
+<script>
+const UNIT1 = [
+{
+  id:"datatypes", num:1, icon:"🔢", title:"Data Types", short:"int, float, char",
+  tagline:"Before a C program can do anything, it needs to know what kind of data it's holding. That's what data types are for.",
+  concept:`
+    <p class="lead">Every value a computer stores — a mark out of 100, a price with paise, a single letter grade — needs a <b>box of the right shape</b> to live in. In C, you must tell the compiler the shape of that box before you use it. That's a <b>data type</b>.</p>
+    <div class="analogy">Think of your hostel room cupboard: one shelf is sized for shoes, another for books, another for a water bottle. You would not try to stuff a mattress into the shoe shelf. Similarly, <b>int</b> is a shelf for whole numbers, <b>float</b> for numbers with decimals, and <b>char</b> for a single character.</div>
+    <p class="prose">C decides <b>how many bytes of memory</b> to reserve based on the data type you choose, and that in turn decides the <b>range</b> of values it can hold. Pick the wrong type and your program either wastes memory or silently gives you wrong answers when a value does not fit.</p>
+    <table class="kv-table">
+      <tr><th>Type</th><th>Stores</th><th>Typical size</th><th>Typical range</th><th>Example</th></tr>
+      <tr><td class="mono">int</td><td>Whole numbers</td><td>4 bytes</td><td class="rng">-2,147,483,648 to 2,147,483,647</td><td class="mono">int marks = 87;</td></tr>
+      <tr><td class="mono">float</td><td>Decimal numbers</td><td>4 bytes</td><td class="rng">~ ±3.4 × 10³⁸ (6-7 digit precision)</td><td class="mono">float cgpa = 8.92;</td></tr>
+      <tr><td class="mono">char</td><td>One character</td><td>1 byte</td><td class="rng">-128 to 127 (stores a letter's ASCII code)</td><td class="mono">char grade = 'A';</td></tr>
+    </table>
+    <p class="prose">Sizes above are typical for most college lab machines (GCC on a 32/64-bit system) — the C standard only guarantees minimum sizes, so they can vary slightly by compiler. You can always verify on your own machine using <code>sizeof(int)</code>, <code>sizeof(float)</code>, <code>sizeof(char)</code>.</p>
+    <div class="mini-head">Why does it matter which one you pick?</div>
+    <ul class="point-list">
+      <li>Use <b>int</b> for counts, IDs, ages, roll numbers — anything that is naturally a whole number.</li>
+      <li>Use <b>float</b> (or <b>double</b> for more precision) for marks with decimals, prices, temperatures, GPAs.</li>
+      <li>Use <b>char</b> for a single letter or symbol — a grade, a menu choice, a yes/no as 'Y'/'N'.</li>
+      <li>Internally, a <b>char</b> is just a small number — the character's <b>ASCII code</b> (e.g. 'A' is 65). That is why you can do arithmetic with characters in C, like checking if a letter is a vowel by comparing it against 'a' through 'z'.</li>
+      <li>Choosing too small a type causes <b>overflow</b> — for example, storing 50,000 in a type that only goes up to 32,767 wraps around to a nonsense negative number instead of raising an error.</li>
+    </ul>
+    <div class="mini-head">Where you will actually see this</div>
+    <div class="rw-grid">
+      <div class="rw-card"><div class="rw-icon">📱</div><div class="rw-title">Mobile recharge apps</div><div class="rw-desc">Recharge amount (Rs 149.00) is a float, validity in days is an int, and the plan category might be stored as a single char code like 'P' for prepaid.</div></div>
+      <div class="rw-card"><div class="rw-icon">🎓</div><div class="rw-title">College result portal</div><div class="rw-desc">Your roll number and credits earned are ints, your CGPA (8.42) is a float, and your grade letter (A, B, C...) is a char.</div></div>
+      <div class="rw-card"><div class="rw-icon">🏧</div><div class="rw-title">ATM software</div><div class="rw-desc">Account balance needs float/double for paise-level accuracy, while the number of withdrawal attempts left is a simple int.</div></div>
+    </div>
+  `,
+  code:{
+    name:"datatypes_demo.c",
+    overview:"This program's whole job is to show the three core types side by side: it declares one variable of each type, asks the user to fill all three through scanf, then echoes them back through printf. The real teaching point is the format specifier: %d for int, %f for float, %c for char, because scanf and printf must be told exactly how to interpret the raw bytes sitting in memory. Get the specifier wrong (say, %d for a float) and you will read garbage, not an error message, because C does not check this for you at compile time.",
+    io:`Enter your age: 19\nEnter your CGPA: 8.75\nEnter your grade: A\n\nAge: 19\nCGPA: 8.75\nGrade: A`,
+    lines:[
+      ["#include <stdio.h>","This line pulls in the Standard Input/Output library. It gives you access to printf() (to print output) and scanf() (to read input) — without it, the compiler would not know what those functions are."],
+      ["int main() {","Every C program starts execution from main(). The int before it means this function will return a whole number to the operating system when it finishes (0 usually means the program ran successfully)."],
+      ["    int age;","Declares a variable named age with the int type. This reserves 4 bytes of memory and labels it age — but no value is stored in it yet; it holds whatever garbage was left in that memory location."],
+      ["    float cgpa;","Declares cgpa as a float, reserving 4 bytes for a decimal number."],
+      ["    char grade;","Declares grade as a char, reserving 1 byte for a single character."],
+      ["","A blank line — purely for readability, the compiler ignores it."],
+      ["    printf(\"Enter your age: \");","Prints a message to the screen asking the user for input. This is called a prompt — good programs always tell the user what to type, instead of showing a blank blinking cursor."],
+      ["    scanf(\"%d\", &age);","Reads a whole number typed by the user and stores it into age. %d tells scanf to expect an integer. The & before age gives scanf the memory address of age so it can write the value directly there — without &, scanf would have no way to reach back into your variable."],
+      ["    printf(\"Enter your CGPA: \");","Prompts for the next input."],
+      ["    scanf(\"%f\", &cgpa);","Reads a decimal number using %f (float format) and stores it in cgpa."],
+      ["    printf(\"Enter your grade: \");","Prompts for the final input."],
+      ["    scanf(\" %c\", &grade);","Reads a single character into grade. The space before %c is a small but important trick — it tells scanf to skip any leftover Enter key or whitespace sitting in the input buffer from the previous scanf, otherwise grade would accidentally capture that leftover newline instead of the letter you typed."],
+      ["","Blank line for spacing."],
+      ["    printf(\"\\nAge: %d\\n\", age);","Prints the stored age back out. \\n means start a new line. %d is replaced by the value inside age."],
+      ["    printf(\"CGPA: %.2f\\n\", cgpa);","Prints cgpa. %.2f means print this float rounded to 2 decimal places — handy for marks and money where you never want 8.750001 showing up on screen."],
+      ["    printf(\"Grade: %c\\n\", grade);","Prints the character stored in grade using %c."],
+      ["","Blank line."],
+      ["    return 0;","Ends main() and tells the operating system the program finished without errors (0 = success, by convention)."],
+      ["}","Closing brace — marks the end of the main() function's body."]
+    ]
+  },
+  quiz:[
+    {q:"You need to store a student's semester GPA like 8.75. Which data type should you use?",opts:["int","float","char"],answer:1,explain:"8.75 has a decimal part, so int would truncate it to 8 and lose information. float is built exactly for numbers with a fractional part."},
+    {q:"What does the & symbol do in scanf(\"%d\", &age);?",opts:["It multiplies age by itself","It gives scanf the memory address of age so it can store the value there","It is a typo and has no real effect"],answer:1,explain:"scanf needs to know WHERE in memory to write the value the user types. & (address-of operator) provides that memory address."},
+    {q:"Why does scanf(\" %c\", &grade); include a leading space before %c?",opts:["It is required syntax with no real purpose","To skip any leftover whitespace or newline left in the input buffer from a previous scanf","To make the code look neatly aligned"],answer:1,explain:"Without the leading space, %c would often pick up a stray Enter keypress left over from the previous input instead of the character you actually typed next."},
+    {q:"Roughly how many bytes does an int typically occupy on a standard lab PC using GCC?",opts:["1 byte","2 bytes","4 bytes"],answer:2,explain:"On most modern 32/64-bit systems with GCC, int is 4 bytes, giving a range of roughly -2.1 billion to +2.1 billion."},
+    {q:"A char variable is really just storing what, internally?",opts:["A tiny image of the letter's shape","A small integer — the character's ASCII code","A pointer to a separate character table"],answer:1,explain:"Characters in C are stored as small integers (their ASCII codes) — 'A' is stored as the number 65. This is why you can compare and even do arithmetic on characters."},
+    {q:"Which format specifier correctly matches a float variable in both scanf and printf?",opts:["%d","%f","%c"],answer:1,explain:"%f is the format specifier for float (and double, in printf). %d is for int, and %c is for a single character."}
+  ],
+  challenge:{
+    title:"Fee Receipt Generator",
+    tag:"Challenge 1",
+    prompt:`<p>Your college wants a tiny program that prints a one-line fee receipt. Write a C program that:</p>
+      <ul>
+        <li>Declares <code>int rollNumber</code>, <code>float feeAmount</code>, and <code>char paymentMode</code> ('C' for cash, 'O' for online)</li>
+        <li>Reads all three values from the user</li>
+        <li>Prints them back as: <code>Receipt: Roll 014 | Rs. 45000.00 | Mode: O</code></li>
+      </ul>`,
+    sample:`Enter roll number: 14\nEnter fee amount: 45000\nEnter payment mode (C/O): O\n\nReceipt: Roll 14 | Rs. 45000.00 | Mode: O`,
+    hints:[
+      "Start from the datatypes_demo.c structure above — you already have the three declare/read/print patterns you need.",
+      "Remember the leading space before %c in scanf to safely skip the leftover newline from the previous scanf.",
+      "Use %.2f when printing feeAmount so it always shows two decimal places, even if the user types a whole number like 45000."
+    ],
+    solution:{
+      overview:"This is a direct combination of the three declare-read-print patterns from the concept program, just aimed at a receipt-style single line of output instead of three separate lines.",
+      lines:[
+        ["#include <stdio.h>","Needed for printf and scanf."],
+        ["int main() {","Program entry point."],
+        ["    int rollNumber;\n    float feeAmount;\n    char paymentMode;","One variable of each required type."],
+        ["    printf(\"Enter roll number: \");\n    scanf(\"%d\", &rollNumber);","Reads the roll number."],
+        ["    printf(\"Enter fee amount: \");\n    scanf(\"%f\", &feeAmount);","Reads the fee amount."],
+        ["    printf(\"Enter payment mode (C/O): \");\n    scanf(\" %c\", &paymentMode);","Reads the payment mode, with the leading space guard before %c."],
+        ["    printf(\"\\nReceipt: Roll %d | Rs. %.2f | Mode: %c\\n\", rollNumber, feeAmount, paymentMode);","One printf with three format specifiers, matched in order to the three variables listed after the comma."],
+        ["    return 0;\n}","Ends the program."]
+      ]
+    }
+  }
+},
+{
+  id:"expressions", num:2, icon:"🧮", title:"Assignment & Arithmetic Expressions", short:"operators & precedence",
+  tagline:"C evaluates arithmetic in a strict, predictable order — once you know the order, you can predict any expression's answer by hand.",
+  concept:`
+    <p class="lead">An <b>expression</b> is any combination of variables, values, and operators that C reduces down to a single value — like <code>a + b * c</code>. An <b>assignment</b> then stores that value into a variable using <code>=</code>.</p>
+    <div class="analogy"><b>The = sign in C is not "equals" like in maths.</b> It means: compute the right-hand side first, then dump the result into the left-hand side variable. So <code>a = a + 1;</code> is perfectly valid in C — it means take a's current value, add 1, and store that back into a — even though it would be nonsense as a maths equation.</div>
+    <div class="mini-head">Operator precedence — who goes first?</div>
+    <p class="prose">Just like in maths, C does not evaluate left to right blindly. Multiplication and division are evaluated before addition and subtraction, no matter where they appear in the expression.</p>
+    <table class="kv-table">
+      <tr><th>Priority</th><th>Operators</th><th>Meaning</th></tr>
+      <tr><td>1st (highest)</td><td class="mono">( )</td><td>Parentheses — always evaluated first</td></tr>
+      <tr><td>2nd</td><td class="mono">* / %</td><td>Multiplication, division, modulus (remainder)</td></tr>
+      <tr><td>3rd (lowest)</td><td class="mono">+ -</td><td>Addition, subtraction</td></tr>
+    </table>
+    <p class="prose">When two operators of the same priority appear together (like two multiplications), C evaluates them <b>left to right</b>. This is called <b>associativity</b>.</p>
+    <div class="chip-row">
+      <div class="chip">a + b * c  →  b*c first</div>
+      <div class="chip">(a + b) * c  →  a+b first</div>
+      <div class="chip">a / b / c  →  (a/b)/c</div>
+    </div>
+    <p class="prose">One more C-specific trap: if <b>a</b> and <b>b</b> are both <code>int</code>, then <code>a / b</code> does <b>integer division</b> — it drops the decimal part entirely. <code>7 / 2</code> gives <code>3</code>, not <code>3.5</code>. This exact behaviour shows up in the worked program below, and it is one of the single most common bugs beginners write in C.</p>
+    <div class="mini-head">Where you will actually see this</div>
+    <div class="rw-grid">
+      <div class="rw-card"><div class="rw-icon">🚕</div><div class="rw-title">Cab fare apps</div><div class="rw-desc">fare = baseFare + ratePerKm * distance — the multiplication must happen before the addition, or every ride would be wildly overpriced.</div></div>
+      <div class="rw-card"><div class="rw-icon">💡</div><div class="rw-title">Electricity billing</div><div class="rw-desc">bill = fixedCharge + unitsUsed * ratePerUnit relies on precedence exactly the same way, and integer division would silently round off your units if you are not careful with types.</div></div>
+      <div class="rw-card"><div class="rw-icon">📊</div><div class="rw-title">Result processing</div><div class="rw-desc">average = totalMarks / numberOfSubjects — if both are declared as int, you lose the decimal part of the average entirely unless you cast to float.</div></div>
+    </div>
+  `,
+  code:{
+    name:"exercise1a.c",
+    overview:"This program exists purely to prove precedence and integer division on paper-verifiable numbers. It takes three integers, then runs them through a chain of three reassignments, each new line depends on the UPDATED value from the line before it, not the original input. Tracing this by hand, one variable at a time, is exactly the skill the S3 to S4 guided practice sessions are built around.",
+    io:`Enter the values of a, b and c: 2 3 4\n\nAfter evaluation:\na = 14\nb = 3\nc = 17`,
+    lines:[
+      ["#include <stdio.h>","Brings in printf() and scanf() so we can talk to the user."],
+      ["int main() {","Program execution begins here."],
+      ["    int a, b, c;","Declares three integer variables in one line — a shorthand for writing three separate int a; int b; int c; statements."],
+      ["    // Input values","A comment. Anything after // is ignored by the compiler — it is a note for humans reading the code."],
+      ["    printf(\"Enter the values of a, b and c: \");","Asks the user to type three numbers."],
+      ["    scanf(\"%d %d %d\", &a, &b, &c);","Reads three integers separated by spaces and stores them into a, b, and c respectively. The & gives scanf the memory address of each variable so it knows where to write the values."],
+      ["    // Evaluate expressions","Comment marking the start of the actual calculation."],
+      ["    a = a + b * c;","Precedence rule kicks in: b * c is calculated first (3 x 4 = 12), then added to a's current value (2 + 12 = 14). The result, 14, is stored back into a — overwriting the original 2. From this point on, every later line that mentions a will see 14, not 2."],
+      ["    b = a / c;","Uses the NEW value of a (14, from the line above) divided by c (4). Since a and c are both int, this is integer division: 14 / 4 = 3.5, truncated down to 3 (the decimal part is thrown away, not rounded). b becomes 3."],
+      ["    c = b + a;","Uses the NEW b (3) and the NEW a (14): 3 + 14 = 17. c becomes 17, overwriting the original 4."],
+      ["    // Display output","Comment marking the print section."],
+      ["    printf(\"\\nAfter evaluation:\\n\");","Prints a blank line then a heading, using \\n to move to new lines."],
+      ["    printf(\"a = %d\\n\", a);","Prints the final value stored in a (14)."],
+      ["    printf(\"b = %d\\n\", b);","Prints the final value stored in b (3)."],
+      ["    printf(\"c = %d\\n\", c);","Prints the final value stored in c (17)."],
+      ["    return 0;","Signals successful completion of the program."],
+      ["}","End of main()."]
+    ]
+  },
+  quiz:[
+    {q:"If a=2, b=3, c=4, what does the expression a + b * c evaluate to?",opts:["20 (because C works left to right)","14 (because * is evaluated before +)","24 (because + is evaluated before *)"],answer:1,explain:"Multiplication has higher precedence than addition, so b*c = 12 is computed first, then a + 12 = 2 + 12 = 14."},
+    {q:"What does 7 / 2 evaluate to in C if both 7 and 2 are int literals?",opts:["3.5","3","4 (rounded up)"],answer:1,explain:"Integer division in C truncates the decimal part completely — it does not round. 7/2 gives exactly 3."},
+    {q:"How would you get the mathematically correct 3.5 from dividing 7 by 2 in C?",opts:["It is impossible in C","Make sure at least one of the operands is a float or double, e.g. 7.0 / 2","Use the % operator instead of /"],answer:1,explain:"If either operand is a floating-point type, C performs floating-point division and keeps the decimal part. 7.0 / 2 gives 3.5."},
+    {q:"In the expression (a + b) * c, why are the parentheses necessary if you want addition to happen first?",opts:["They are not necessary, C always does + before *","Parentheses have the highest precedence and force that part to be evaluated first, overriding the normal * before + rule","Parentheses only affect how the code looks, not how it runs"],answer:1,explain:"Without parentheses, * would bind tighter than + by default. Parentheses override the default precedence and force their contents to be evaluated first."},
+    {q:"What does the % operator do in C?",opts:["Converts a number to a percentage","Gives the remainder after integer division","Rounds a float to the nearest integer"],answer:1,explain:"% is the modulus operator — it returns the remainder of a division. For example, 17 % 5 gives 2."},
+    {q:"In exercise1a.c, why does the order of the three lines a = a + b*c; b = a/c; c = b+a; matter?",opts:["It does not matter, C would give the same answer in any order","Because each line uses the UPDATED value from the previous line, not the original input values","Because C requires assignment statements to be written in alphabetical order of the variable names"],answer:1,explain:"b = a / c uses the NEW a (already changed by the line above), and c = b + a uses both the new b and the new a. Reordering the lines would change every subsequent result."}
+  ],
+  challenge:{
+    title:"Simple Interest Calculator",
+    tag:"Challenge 2",
+    prompt:`<p>Banks calculate simple interest as <code>SI = (P × R × T) / 100</code>, where P is principal, R is rate of interest per year, and T is time in years. Write a program that:</p>
+      <ul>
+        <li>Reads principal, rate, and time as floats</li>
+        <li>Computes and prints the simple interest, correct to 2 decimal places</li>
+      </ul>`,
+    sample:`Enter Principal: 50000\nEnter Rate: 8.5\nEnter Time (years): 3\n\nSimple Interest = Rs. 12750.00`,
+    hints:[
+      "Multiplication happens left to right when priorities are equal, so P * R * T works fine without extra brackets.",
+      "Since P, R, T are all float, dividing by 100 will correctly keep any decimal part — you do not need to worry about integer division here.",
+      "Use %.2f in your final printf so the amount always looks like real currency."
+    ],
+    solution:{
+      overview:"A one-line formula translated almost word for word from maths into C, relying on the fact that all three inputs are floats so the whole calculation stays in floating point.",
+      lines:[
+        ["#include <stdio.h>","Needed for printf/scanf."],
+        ["int main() {","Entry point."],
+        ["    float principal, rate, time, si;","All floats, since money and rates involve decimals."],
+        ["    printf(\"Enter Principal: \"); scanf(\"%f\", &principal);","Reads principal."],
+        ["    printf(\"Enter Rate: \"); scanf(\"%f\", &rate);","Reads annual rate of interest."],
+        ["    printf(\"Enter Time (years): \"); scanf(\"%f\", &time);","Reads time in years."],
+        ["    si = (principal * rate * time) / 100;","Parentheses are optional here since * has higher precedence than / anyway, but they make the formula visually match the maths version."],
+        ["    printf(\"\\nSimple Interest = Rs. %.2f\\n\", si);","Prints the result rounded to 2 decimals."],
+        ["    return 0;\n}","Ends the program."]
+      ]
+    }
+  }
+},
+{
+  id:"swapping", num:3, icon:"🔁", title:"Variable Swapping", short:"with & without temp",
+  tagline:"Swapping two variables is a tiny problem that teaches a big idea: how memory actually changes as each statement runs.",
+  concept:`
+    <p class="lead">Swapping means exchanging the values held by two variables — after swapping, <b>b</b> should hold what <b>c</b> used to hold, and vice versa. This sounds trivial, but if you do it carelessly you lose one of the two values permanently.</p>
+    <div class="analogy">Imagine two cups, one with tea and one with coffee. If you just pour the tea cup into the coffee cup, both cups now have the same mixed liquid — you have lost the original coffee. You need a <b>third, empty cup</b> to hold one drink temporarily while you pour. That third cup is exactly what a <b>temp</b> variable does.</div>
+    <div class="mini-head">Method 1 — using a temporary variable</div>
+    <p class="prose">Store one value safely in <code>temp</code> before you overwrite anything. This always works, for any data type, and is the method you should default to in real projects.</p>
+    <div class="mini-head">Method 2 — without a temporary variable (arithmetic trick)</div>
+    <p class="prose">For numbers, you can swap using only addition and subtraction, avoiding the extra variable entirely — useful when memory is genuinely tight, or as a classic interview trick. It only works cleanly for numeric types and can silently overflow for very large numbers (the intermediate sum can exceed int's range even if neither original value does), so method 1 remains the safer general-purpose choice.</p>
+    <div class="mini-head">Where you will actually see this</div>
+    <div class="rw-grid">
+      <div class="rw-card"><div class="rw-icon">🔀</div><div class="rw-title">Sorting algorithms</div><div class="rw-desc">Bubble sort and selection sort are, at their core, nothing but repeated swaps of adjacent array elements — this exact pattern, applied thousands of times.</div></div>
+      <div class="rw-card"><div class="rw-icon">💺</div><div class="rw-title">Seat reallocation systems</div><div class="rw-desc">A train or flight booking system swapping two passengers' seat numbers uses precisely this temp-variable pattern under the hood.</div></div>
+      <div class="rw-card"><div class="rw-icon">🎮</div><div class="rw-title">Turn-based games</div><div class="rw-desc">Swapping "current player" and "next player" between turns, or swapping two items in an inventory slot, both reduce to this same three-line pattern.</div></div>
+    </div>
+  `,
+  code:{
+    name:"exercise1b_swap.c",
+    overview:"This program deliberately shows both swapping techniques back to back on the same pair of numbers, so you can see that they reach the identical end result through completely different mechanics, one using extra memory (temp), the other using only arithmetic. Tracing the value of every variable after every single line is the best way to actually understand this, so the walkthrough below does exactly that.",
+    io:`Before swapping: b = 3, c = 4\nAfter swapping: b = 4, c = 3\n\nBefore swapping: b = 4, c = 3\nAfter swapping: b = 3, c = 4`,
+    lines:[
+      ["    int a, b, c, temp;","Declares four integers — temp is the 'extra cup' we will use only for the first swap method."],
+      ["    // Swapping with temporary variable","Comment introducing method 1."],
+      ["    printf(\"Before swapping: b = %d, c = %d\\n\", b, c);","Shows the values before anything changes, so we can compare afterwards."],
+      ["    temp = b;","Copies b's value into temp first. Now temp safely holds a backup of b (say, 3), and b still holds 3 too — nothing is lost yet."],
+      ["    b = c;","Overwrites b with c's value (say, 4). At this exact moment, b and c both hold 4 — but that is fine, because the original b (3) is safely parked in temp."],
+      ["    c = temp;","Overwrites c with the backup value from temp (the original b, 3). Now b holds the old c, and c holds the old b — the swap is complete."],
+      ["    printf(\"After swapping: b = %d, c = %d\\n\", b, c);","Prints the swapped values to confirm it worked."],
+      ["    // Swapping without temporary variable","Comment introducing method 2 — no extra variable used."],
+      ["    printf(\"Before swapping: b = %d, c = %d\\n\", b, c);","Shows the current values (now b=4, c=3 from the previous swap) before this second swap begins."],
+      ["    b = b + c;","b now temporarily holds the SUM of both original values (4 + 3 = 7). This sum secretly encodes both numbers at once — this is the key trick that makes the whole method work."],
+      ["    c = b - c;","Subtracting the current c (3) from the combined sum (7) leaves 4 — which is exactly the original b. c is now set to that value."],
+      ["    b = b - c;","Subtracting the NEW c (4, the original b) from the sum (7) leaves 3 — the original c. b is now set to that value. The swap is complete, with no third variable used."],
+      ["    printf(\"After swapping: b = %d, c = %d\\n\", b, c);","Prints the result — b and c have swapped again, back to their original values."]
+    ]
+  },
+  quiz:[
+    {q:"Why do you need a temp variable when swapping with the first method?",opts:["To make the program longer and look more professional","So one value has a safe place to sit while you overwrite the variable that used to hold it","Because C requires at least 3 variables in every swap"],answer:1,explain:"If you write b = c; first with no temp, b's original value is gone forever before you get a chance to give it to c. temp exists purely to preserve that value during the overwrite."},
+    {q:"In the temp-variable method, what is stored in temp right after the line temp = b; runs?",opts:["The original value of c","The original value of b","Nothing, temp stays empty until later"],answer:1,explain:"temp = b; copies b's current value into temp — so temp now holds a backup copy of the original b."},
+    {q:"In the no-temp arithmetic swap, what does b actually hold immediately after b = b + c; runs?",opts:["The original value of b, unchanged","The original value of c","The SUM of the original b and the original c"],answer:2,explain:"b = b + c; overwrites b with the sum of both original values — this sum is what lets the next two lines recover each original number separately."},
+    {q:"What is one real downside of the arithmetic (no-temp) swap method compared to using a temp variable?",opts:["It uses more memory than the temp method","The intermediate sum b + c can overflow even if neither original value would, especially with very large numbers","It only works on char variables, not int"],answer:1,explain:"Because b temporarily holds the sum of both values, that sum can exceed the maximum value an int can hold even when b and c individually are both within range, causing incorrect results."},
+    {q:"After both swaps in exercise1b_swap.c finish, what are the final values of b and c?",opts:["b = 3, c = 4 (back to the original order)","b = 4, c = 3 (swapped from the original)","b = 7, c = 7 (both equal to the sum)"],answer:0,explain:"The program swaps once with temp (3,4 becomes 4,3) and then swaps again with arithmetic (4,3 becomes 3,4) — two swaps cancel out and return to the original order."},
+    {q:"Which swap method would you choose as the safe, general-purpose default in real projects?",opts:["The arithmetic no-temp method, because it uses less memory","The temp-variable method, because it works reliably for any data type without risk of overflow","It does not matter, both are identical in every situation"],answer:1,explain:"The temp-variable method has no overflow risk and works for any type (int, float, even structs), making it the dependable default. The arithmetic trick is a clever but situational optimisation."}
+  ],
+  challenge:{
+    title:"Swap Two Students' Marks",
+    tag:"Challenge 3",
+    prompt:`<p>Two students' marks were entered in the wrong order by mistake. Write a program that:</p>
+      <ul>
+        <li>Reads two float marks, mark1 and mark2</li>
+        <li>Swaps them using a temporary variable</li>
+        <li>Prints both values before and after swapping</li>
+      </ul>`,
+    sample:`Enter mark1: 78.5\nEnter mark2: 91.0\n\nBefore: mark1 = 78.50, mark2 = 91.00\nAfter: mark1 = 91.00, mark2 = 78.50`,
+    hints:[
+      "The logic is identical to the int version above — only the data type changes, so temp must also be declared as float here.",
+      "Print the 'Before' values right after reading input, before you touch either variable.",
+      "Use %.2f for all three prints so the marks display cleanly."
+    ],
+    solution:{
+      overview:"Exactly the temp-variable swap from the concept program, with every variable retyped from int to float to handle decimal marks.",
+      lines:[
+        ["#include <stdio.h>","Needed for printf/scanf."],
+        ["int main() {","Entry point."],
+        ["    float mark1, mark2, temp;","temp must be float too, or it would truncate the decimal part of whichever mark it temporarily holds."],
+        ["    printf(\"Enter mark1: \"); scanf(\"%f\", &mark1);\n    printf(\"Enter mark2: \"); scanf(\"%f\", &mark2);","Reads both marks."],
+        ["    printf(\"\\nBefore: mark1 = %.2f, mark2 = %.2f\\n\", mark1, mark2);","Shows the original order."],
+        ["    temp = mark1;\n    mark1 = mark2;\n    mark2 = temp;","The standard three-line temp swap, applied to floats exactly as it was applied to ints."],
+        ["    printf(\"After: mark1 = %.2f, mark2 = %.2f\\n\", mark1, mark2);","Shows the corrected order."],
+        ["    return 0;\n}","Ends the program."]
+      ]
+    }
+  }
+},
+{
+  id:"ifelse", num:4, icon:"🧭", title:"Decision Making — if...else if...else", short:"choosing between paths",
+  tagline:"Real programs rarely run in a straight line — they branch based on conditions, just like you decide what to wear based on the weather.",
+  concept:`
+    <p class="lead">The <code>if</code> statement lets your program check a condition and run different code depending on whether it is true or false. Chain several together with <code>else if</code> to test multiple conditions in order, and finish with a plain <code>else</code> to catch everything that did not match.</p>
+    <div class="analogy">It reads almost like English: "if it's raining, take an umbrella. else if it's sunny, wear sunglasses. else, just go as you are." C checks each condition top to bottom and stops at the first one that is true — it never checks the rest after that.</div>
+    <table class="kv-table">
+      <tr><th>Structure</th><th>What it means</th></tr>
+      <tr><td class="mono">if (condition)</td><td>Run the block only if condition is true</td></tr>
+      <tr><td class="mono">else if (condition2)</td><td>If the first condition was false, try this one</td></tr>
+      <tr><td class="mono">else</td><td>Runs only if none of the above conditions matched</td></tr>
+    </table>
+    <p class="prose">A condition in C is really just an expression that evaluates to <b>true (any non-zero value)</b> or <b>false (exactly 0)</b>. Comparison operators like <code>&gt; &lt; == != &gt;= &lt;=</code> produce these true/false results.</p>
+    <div class="mini-head">A common trap: order matters</div>
+    <p class="prose">Because C stops at the first true condition, writing your ranges in the wrong order silently breaks the logic. If you check <code>marks &gt;= 40</code> before checking <code>marks &gt;= 90</code>, then a student with 95 marks will incorrectly get caught by the first, looser condition. Always order range checks from most specific (highest or narrowest) to least specific.</p>
+    <div class="mini-head">Where you will actually see this</div>
+    <div class="rw-grid">
+      <div class="rw-card"><div class="rw-icon">🚦</div><div class="rw-title">Traffic light controllers</div><div class="rw-desc">if the sensor detects a car and the light is red, switch to green after N seconds — else keep waiting. Embedded traffic systems are built almost entirely out of if-else chains.</div></div>
+      <div class="rw-card"><div class="rw-icon">🏧</div><div class="rw-title">ATM PIN entry</div><div class="rw-desc">if PIN is correct, allow the transaction; else if attempts remain, ask again; else, block the card. A textbook 3-branch if-else-if-else chain.</div></div>
+      <div class="rw-card"><div class="rw-icon">🛒</div><div class="rw-title">E-commerce discounts</div><div class="rw-desc">if the cart total is above Rs 5000, apply 20% off; else if above Rs 2000, apply 10% off; else, no discount. Tier-based pricing is if-else in disguise.</div></div>
+    </div>
+  `,
+  code:{
+    name:"exercise2_number_check.c",
+    overview:"This program actually runs TWO separate decisions back to back on the same number: first, is it positive, negative, or zero (a three-way if-else-if-else chain); second, is it odd or even (a nested if-else inside a guard condition). They are independent questions about the same input, which is why they are written as two separate if structures rather than one giant chain — mixing unrelated questions into a single chain would make the logic much harder to follow.",
+    io:`Enter an integer: -15\nThe number is Negative.\nThe number is Odd.`,
+    lines:[
+      ["    int num;","Declares an integer to hold the number the user types in."],
+      ["    printf(\"Enter an integer: \");","Prompts the user."],
+      ["    scanf(\"%d\", &num);","Reads the integer into num."],
+      ["    // Check Positive, Negative or Zero","Comment describing the first decision block."],
+      ["    if (num > 0)","Tests: is num strictly greater than 0? For num = -15, this is FALSE, so C skips straight to the next else if without running the line below."],
+      ["        printf(\"The number is Positive.\\n\");","Only runs if the if above was true. Since it was not for -15, this line is skipped entirely."],
+      ["    else if (num < 0)","Only checked because the first if was false. Tests: is num less than 0? For -15, this is TRUE."],
+      ["        printf(\"The number is Negative.\\n\");","Because the else if above was true, this line runs — it prints 'The number is Negative.' and C skips the remaining else."],
+      ["    else","Would only run if BOTH earlier conditions were false — meaning num is exactly 0. Not reached in this run."],
+      ["        printf(\"The number is Zero.\\n\");","Skipped, since num was -15, not 0."],
+      ["    // Check Odd or Even","Comment for the second, independent decision block."],
+      ["    if (num != 0)","A guard condition: only bother checking odd/even if the number is not zero. -15 != 0 is TRUE, so C enters this block."],
+      ["    {","Opens the block of code that runs only when num != 0."],
+      ["        if (num % 2 == 0)","% is the modulus operator — it gives the REMAINDER of division. -15 % 2 = -1 (not 0), so this condition is FALSE."],
+      ["            printf(\"The number is Even.\\n\");","Skipped, since the remainder was not 0."],
+      ["        else","Runs because the inner if was false."],
+      ["            printf(\"The number is Odd.\\n\");","Prints 'The number is Odd.' — this is the line that actually executes for -15."],
+      ["    }","Closes the block opened above."]
+    ]
+  },
+  quiz:[
+    {q:"In an if / else if / else chain, what happens once C finds a condition that is true?",opts:["It runs that block, then still checks all the remaining else if / else conditions too","It runs that block and skips every other condition in the same chain","It runs every block whose condition is also true, one after another"],answer:1,explain:"An if/else if/else chain always picks exactly one branch — the first true condition wins, and C never bothers evaluating the rest of the chain after that."},
+    {q:"Why does the program check num != 0 as a guard before the odd/even check?",opts:["Because dividing by zero would crash the program","So the odd/even question is only asked for numbers where it is meaningful in this program's design, keeping it separate from the positive/negative/zero check","Because % does not work on negative numbers"],answer:1,explain:"num % 2 works fine even for 0 mathematically, but this program deliberately separates the two questions, using != 0 to gate the second check as an independent block."},
+    {q:"If you wrote grade checks in this order: if(marks>=40) ... else if(marks>=90) ..., what would go wrong for a student with 95 marks?",opts:["Nothing, C checks all conditions regardless of order","They would incorrectly match the marks>=40 branch first, since C stops at the first true condition and 95>=40 is already true","The program would fail to compile"],answer:1,explain:"Because 95 satisfies marks>=40 as well as marks>=90, and C stops at the FIRST true condition in the chain, writing the loose condition first means the stricter, more correct condition never gets a chance to run."},
+    {q:"What does the comparison operator == check, as opposed to a single =?",opts:["== assigns a value, = compares two values","== compares two values for equality, = assigns a value to a variable","They are interchangeable in C"],answer:1,explain:"= is assignment (store a value). == is comparison (check if two values are equal). Confusing the two is one of the most common beginner bugs in C."},
+    {q:"What value does a condition like (num < 0) evaluate to in C when it is true?",opts:["The text 'true'","Any non-zero value, conventionally 1","The value of num itself"],answer:1,explain:"C does not have a dedicated boolean type in the classic sense — a true condition evaluates to 1 (non-zero) and a false condition evaluates to exactly 0."},
+    {q:"For num = 0, which branch of the odd/even check in this program actually runs?",opts:["The Odd branch","The Even branch","Neither — the guard if (num != 0) prevents entering the block at all"],answer:2,explain:"0 != 0 is false, so the whole { ... } block, including both the Even and Odd prints, is skipped entirely when num is 0."}
+  ],
+  challenge:{
+    title:"Grade Calculator",
+    tag:"Challenge 4",
+    prompt:`<p>Write a program that reads a student's marks out of 100 and prints their grade using this scheme:</p>
+      <ul>
+        <li>marks &ge; 90 → A+</li>
+        <li>marks &ge; 75 → A</li>
+        <li>marks &ge; 60 → B</li>
+        <li>marks &ge; 40 → C</li>
+        <li>anything below 40 → Fail</li>
+      </ul>`,
+    sample:`Enter marks: 82\n\nGrade: A`,
+    hints:[
+      "Order your conditions from the HIGHEST threshold down to the lowest — this is the exact trap explained in the concept section above.",
+      "You only need four if/else if conditions plus a final else — you do not need a separate check for every single grade boundary.",
+      "Test your logic on boundary values like exactly 90, exactly 75, and exactly 39 to make sure edge cases land in the right grade."
+    ],
+    solution:{
+      overview:"A direct application of the ordering rule from the concept section: conditions are written from the strictest (highest marks) down to the loosest, so each student is caught by the correct, most specific range.",
+      lines:[
+        ["#include <stdio.h>","Needed for printf/scanf."],
+        ["int main() {","Entry point."],
+        ["    int marks;","Marks are read as a whole number here for simplicity."],
+        ["    printf(\"Enter marks: \"); scanf(\"%d\", &marks);","Reads the marks."],
+        ["    if (marks >= 90)\n        printf(\"Grade: A+\\n\");","Checked first, since it is the strictest condition."],
+        ["    else if (marks >= 75)\n        printf(\"Grade: A\\n\");","Only reached if marks was below 90, so this correctly captures the 75-89 range."],
+        ["    else if (marks >= 60)\n        printf(\"Grade: B\\n\");","Captures 60-74, only reached if both stricter checks failed."],
+        ["    else if (marks >= 40)\n        printf(\"Grade: C\\n\");","Captures 40-59."],
+        ["    else\n        printf(\"Grade: Fail\\n\");","Catches everything below 40, since every stricter condition above has already failed."],
+        ["    return 0;\n}","Ends the program."]
+      ]
+    }
+  }
+},
+{
+  id:"boolean", num:5, icon:"⚖️", title:"Boolean Expressions for Decision Making", short:"AND, OR, NOT & real checks",
+  tagline:"Real decisions rarely rest on a single condition — combining conditions with logical operators is how you check several rules at once.",
+  concept:`
+    <p class="lead">A <b>boolean expression</b> is any expression that evaluates to true or false. C lets you combine several of these into one bigger check using <b>logical operators</b>.</p>
+    <table class="kv-table">
+      <tr><th>Operator</th><th>Meaning</th><th>True when...</th></tr>
+      <tr><td class="mono">&amp;&amp;</td><td>Logical AND</td><td>Both sides are true</td></tr>
+      <tr><td class="mono">||</td><td>Logical OR</td><td>At least one side is true</td></tr>
+      <tr><td class="mono">!</td><td>Logical NOT</td><td>Flips true to false and vice versa</td></tr>
+    </table>
+    <div class="analogy">A bank will not give you a loan just because your age is fine — age, income, AND credit score all have to pass together. That is <code>&amp;&amp;</code> in action: every condition must hold. But to check if a character is a vowel, matching any one of 'a','e','i','o','u' is enough — that is <code>||</code>.</div>
+    <p class="prose">C also uses <b>short-circuit evaluation</b>: in <code>A &amp;&amp; B</code>, if A is already false, C does not even bother checking B, because the whole expression is guaranteed false regardless. This matters in real code where checking B might be expensive or even unsafe if A was false (for example, checking an array index only after confirming it is within bounds).</p>
+    <div class="mini-head">Where you will actually see this</div>
+    <div class="rw-grid">
+      <div class="rw-card"><div class="rw-icon">🔐</div><div class="rw-title">Login validation</div><div class="rw-desc">if (usernameCorrect && passwordCorrect) grant access — every real login system is fundamentally an AND of multiple checks.</div></div>
+      <div class="rw-card"><div class="rw-icon">🗳️</div><div class="rw-title">Voter eligibility portals</div><div class="rw-desc">if (age >= 18 && isCitizen) allow registration — government eligibility forms are boolean logic wearing a UI.</div></div>
+      <div class="rw-card"><div class="rw-icon">🎓</div><div class="rw-title">Scholarship and loan forms</div><div class="rw-desc">The two real examples below (loan and scholarship eligibility) are taken almost directly from how banks and colleges implement these checks in their own backend systems.</div></div>
+    </div>
+    <p class="prose">Below are five real classification problems from the lab, each built entirely out of comparisons and these three operators.</p>
+  `,
+  subprograms:[
+    {
+      name:"Vowel or Consonant",
+      note:"Uses OR (||) to match any one of five vowels, and a range check to first confirm the input is even a letter.",
+      overview:"This program has to answer two questions in sequence: is the input even an alphabet letter at all, and if so, is it one of the five vowels? The outer if handles the first question with a range check; the inner if uses five OR-chained equality checks to handle the second. Converting to lowercase first is what lets the vowel check use only 5 comparisons instead of 10 (avoiding separately checking 'A' and 'a').",
+      code:{
+        name:"vowel_check.c",
+        io:`Enter an alphabet: E\ne is a Vowel.`,
+        lines:[
+          ["    char ch;","Declares a single character variable."],
+          ["    printf(\"Enter an alphabet: \");","Prompts the user."],
+          ["    scanf(\" %c\", &ch);","Reads one character. The leading space skips any stray whitespace or newline left in the input buffer."],
+          ["    ch = tolower(ch);","Converts ch to lowercase (from ctype.h) so that 'E' and 'e' are treated identically — this avoids writing separate checks for uppercase and lowercase."],
+          ["    if ((ch >= 'a' && ch <= 'z'))","Range check: characters compare using their ASCII codes, so this tests whether ch's code falls between 'a' and 'z' — i.e. is it actually a letter at all."],
+          ["    {","Opens the block for 'it is a letter'."],
+          ["        if (ch == 'a' || ch == 'e' || ch == 'i' ||\n            ch == 'o' || ch == 'u')","Chains five equality checks with ||. This is TRUE the moment ch matches even ONE of the five vowels, thanks to short-circuit evaluation, C stops checking the rest once one matches."],
+          ["            printf(\"%c is a Vowel.\\n\", ch);","Runs if the || condition above was true."],
+          ["        else","Runs if ch was a letter but matched none of the five vowels."],
+          ["            printf(\"%c is a Consonant.\\n\", ch);","Prints that it is a consonant."],
+          ["    }","Closes the 'it is a letter' block."],
+          ["    else","Runs if the very first range check failed — ch was not a letter at all."],
+          ["    {","Opens the invalid-input block."],
+          ["        printf(\"Invalid input! Please enter an alphabet.\\n\");","Tells the user their input was not a letter."],
+          ["    }","Closes the block."]
+        ]
+      }
+    },
+    {
+      name:"Leap Year Checking",
+      note:"Combines AND and OR in one line — a classic real-world rule that cannot be expressed with a single condition.",
+      overview:"The real Gregorian calendar rule for leap years is genuinely a two-part rule (divisible by 400, OR divisible by 4 but not 100), so this program is a direct, almost word-for-word translation of that rule into a single boolean expression, using grouped parentheses to make sure the AND and OR combine exactly the way the rule intends.",
+      code:{
+        name:"leap_year.c",
+        io:`Enter a year: 2024\n2024 is a Leap Year.\n\nEnter a year: 1900\n1900 is NOT a Leap Year.`,
+        lines:[
+          ["    int year;","Declares an integer to hold the year."],
+          ["    printf(\"Enter a year: \");","Prompts the user."],
+          ["    scanf(\"%d\", &year);","Reads the year."],
+          ["    if ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0)))","The actual leap-year rule: a year is a leap year if it is exactly divisible by 400, OR it is divisible by 4 but NOT divisible by 100. Both halves are wrapped in their own parentheses so the AND binds tighter than the OR, matching the real rule exactly."],
+          ["        printf(\"%d is a Leap Year.\\n\", year);","Runs if either condition above held — e.g. 2024 % 4 == 0 and 2024 % 100 != 0, so the right-hand AND group is true."],
+          ["    else","Runs if neither condition held."],
+          ["        printf(\"%d is NOT a Leap Year.\\n\", year);","For 1900: 1900 % 400 is not 0, and although 1900 % 4 == 0, 1900 % 100 IS 0 — so the AND group fails too. Overall condition is false, so this line runs."]
+        ]
+      }
+    },
+    {
+      name:"Alphabet, Digit, or Special Symbol",
+      note:"Chains two range checks with OR, then falls through to a default case with else.",
+      overview:"This is a three-way classification (letter, digit, or symbol) built from just two range checks. Because letters can be uppercase OR lowercase, the first if itself needs an OR of two ranges. Anything that fails both the letter check and the digit check is, by elimination, treated as a special symbol — no explicit symbol range is needed.",
+      code:{
+        name:"char_type.c",
+        io:`Enter a character: @\n@ is a Special Symbol.`,
+        lines:[
+          ["    char ch;","Declares a character variable."],
+          ["    printf(\"Enter a character: \");","Prompts the user."],
+          ["    scanf(\"%c\", &ch);","Reads a single character."],
+          ["    if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))","Checks two ranges with OR: is ch an uppercase letter, or a lowercase letter? True for either range covers all alphabet letters."],
+          ["        printf(\"%c is an Alphabet.\\n\", ch);","Runs if ch was any letter."],
+          ["    else if (ch >= '0' && ch <= '9')","Only checked if ch was not a letter. Tests whether ch's ASCII code falls in the digit range '0' to '9'."],
+          ["        printf(\"%c is a Digit.\\n\", ch);","Runs if ch was a digit character."],
+          ["    else","Runs if ch matched neither a letter nor a digit — for '@' this is the branch taken."],
+          ["        printf(\"%c is a Special Symbol.\\n\", ch);","Prints that the character is a special symbol."]
+        ]
+      }
+    },
+    {
+      name:"Loan Eligibility",
+      note:"A real multi-rule check — all three conditions must hold together, joined with &&.",
+      overview:"This mirrors how a real bank's loan-approval logic works: several independent rules that must ALL pass simultaneously. Using && instead of separate nested if statements keeps the rule compact and, thanks to short-circuit evaluation, stops checking further rules the moment one fails.",
+      code:{
+        name:"loan_eligibility.c",
+        io:`Enter Age: 28\nEnter Monthly Income: 45000\nEnter Credit Score: 760\nEligible for Loan.`,
+        lines:[
+          ["    int age, creditScore;","Declares two integers for age and credit score."],
+          ["    float income;","Declares a float for income, since it could involve decimals."],
+          ["    printf(\"Enter Age: \"); scanf(\"%d\", &age);","Prompts for and reads the applicant's age."],
+          ["    printf(\"Enter Monthly Income: \"); scanf(\"%f\", &income);","Prompts for and reads monthly income as a float."],
+          ["    printf(\"Enter Credit Score: \"); scanf(\"%d\", &creditScore);","Prompts for and reads the credit score."],
+          ["    if (age >= 21 && income >= 30000 && creditScore >= 700)","All three business rules chained with &&. Every single one must be true — age at least 21, income at least Rs 30,000, AND credit score at least 700 — for the whole condition to be true."],
+          ["        printf(\"Eligible for Loan.\\n\");","Runs only when all three rules pass, as they do here (28, 45000, 760)."],
+          ["    else","Runs if even one rule fails."],
+          ["        printf(\"Not Eligible for Loan.\\n\");","Prints rejection — not reached in this sample run."]
+        ]
+      }
+    },
+    {
+      name:"Scholarship Eligibility",
+      note:"A two-rule AND check mixing a lower bound and an upper bound.",
+      overview:"A simpler two-rule version of the same pattern as loan eligibility, notable because it mixes a lower-bound check (marks) with an upper-bound check (income) inside the same &&, showing that AND can combine any comparison directions, not just similarly-shaped ones.",
+      code:{
+        name:"scholarship_eligibility.c",
+        io:`Enter Percentage Marks: 91\nEnter Annual Family Income: 200000\nEligible for Scholarship.`,
+        lines:[
+          ["    float marks, familyIncome;","Declares two floats for percentage marks and annual family income."],
+          ["    printf(\"Enter Percentage Marks: \"); scanf(\"%f\", &marks);","Reads the marks percentage."],
+          ["    printf(\"Enter Annual Family Income: \"); scanf(\"%f\", &familyIncome);","Reads the family's annual income."],
+          ["    if (marks >= 85 && familyIncome <= 250000)","Two rules combined with &&: marks must be at least 85% AND family income must be at most Rs 2,50,000. Note the second rule uses <= (upper bound) rather than >=, showing && can mix any comparison directions."],
+          ["        printf(\"Eligible for Scholarship.\\n\");","Runs since 91 >= 85 and 200000 <= 250000 — both true."],
+          ["    else","Runs if either rule fails."],
+          ["        printf(\"Not Eligible for Scholarship.\\n\");","Prints rejection — not reached here."]
+        ]
+      }
+    }
+  ],
+  quiz:[
+    {q:"The scholarship check requires marks >= 85 AND family income <= Rs 2,50,000. A student has 90% marks but Rs 3,00,000 family income. Are they eligible?",opts:["Yes, one condition being true is enough","No, because with && both conditions must be true, and the income condition fails","Yes, because 90% is a high score"],answer:1,explain:"&& requires every joined condition to be true. Marks (90>=85) pass, but income (3,00,000<=2,50,000) fails, so the overall combined condition is false."},
+    {q:"What does short-circuit evaluation mean for the expression A && B?",opts:["C always evaluates both A and B no matter what","If A is false, C does not bother evaluating B at all, since the result is already known to be false","B is always evaluated first, then A"],answer:1,explain:"C stops as soon as the overall result is guaranteed. If A is false, A && B must be false regardless of B, so B is skipped entirely."},
+    {q:"In the leap year rule ((year%400==0) || ((year%4==0) && (year%100!=0))), why are the two halves wrapped in separate parentheses?",opts:["Purely cosmetic, they could be removed with no change in meaning","To force the AND group to be evaluated as one unit before combining with OR, matching the actual leap year rule","Because C requires parentheses around every && expression"],answer:1,explain:"Although && naturally has higher precedence than || in C even without parentheses, wrapping each rule explicitly makes the intended grouping unambiguous and easy to verify against the real-world rule."},
+    {q:"Why does the vowel-checking program call tolower(ch) before comparing it to 'a','e','i','o','u'?",opts:["To make the output look nicer","So both uppercase and lowercase vowels are matched using only 5 comparisons instead of 10","tolower() is required before any scanf call in C"],answer:1,explain:"Converting to lowercase first means the vowel check only needs to compare against 5 lowercase letters, rather than separately checking for both 'A'/'a', 'E'/'e', and so on."},
+    {q:"Which operator would you use to check that a character is NOT a digit?",opts:["&&","||","!"],answer:2,explain:"! is the logical NOT operator, it flips true to false and vice versa. !(ch >= '0' && ch <= '9') would mean 'ch is not a digit'."},
+    {q:"A loan applicant has age 25, income Rs 20,000, and credit score 750. Based on the loan eligibility rule (age>=21 && income>=30000 && creditScore>=700), are they eligible?",opts:["Yes, because 2 out of 3 conditions pass","No, because income (20,000) fails the >=30,000 requirement, and && needs every condition to hold","Yes, because their credit score is very high"],answer:1,explain:"Even though age and credit score both pass, && demands ALL conditions be true simultaneously. The income condition fails, so the whole expression is false."}
+  ],
+  challenge:{
+    title:"Voter Eligibility Checker",
+    tag:"Challenge 5",
+    prompt:`<p>Write a program that checks if someone is eligible to vote in India. A person is eligible if:</p>
+      <ul>
+        <li>Their age is at least 18, AND</li>
+        <li>They are an Indian citizen (read as a char: 'Y' for yes, 'N' for no)</li>
+      </ul>`,
+    sample:`Enter age: 20\nAre you an Indian citizen? (Y/N): Y\n\nEligible to vote.`,
+    hints:[
+      "This is structurally identical to the loan eligibility program — just two rules joined with && instead of three.",
+      "Compare the citizenship char directly with 'Y' using ==, the same way the vowel checker compares characters.",
+      "Remember the leading space before %c in scanf, exactly like in the vowel-check program."
+    ],
+    solution:{
+      overview:"A two-rule && check that mixes a numeric comparison (age) with a character comparison (citizenship), following the same eligibility-check pattern used for loans and scholarships above.",
+      lines:[
+        ["#include <stdio.h>","Needed for printf/scanf."],
+        ["int main() {","Entry point."],
+        ["    int age;\n    char citizen;","Declares age as int and citizen as char."],
+        ["    printf(\"Enter age: \"); scanf(\"%d\", &age);","Reads age."],
+        ["    printf(\"Are you an Indian citizen? (Y/N): \"); scanf(\" %c\", &citizen);","Reads the citizenship flag, with the leading space guard."],
+        ["    if (age >= 18 && citizen == 'Y')","Both rules must hold: age at least 18, AND the citizenship character must exactly equal 'Y'."],
+        ["        printf(\"\\nEligible to vote.\\n\");","Runs only if both conditions pass."],
+        ["    else\n        printf(\"\\nNot eligible to vote.\\n\");","Runs if either condition fails."],
+        ["    return 0;\n}","Ends the program."]
+      ]
+    }
+  }
+},
+{
+  id:"inputoutput", num:6, icon:"⌨️", title:"User-Defined Input & Output", short:"printf, scanf and format specifiers",
+  tagline:"Let the user talk to your program: ask for data, store it, and show the result clearly.",
+  concept:`
+    <p class="lead">A program becomes interactive when it can <b>take input from the user</b> and <b>display output</b>. In C, the most common tools for this are <code>scanf()</code> for input and <code>printf()</code> for output.</p>
+    <div class="analogy"><b>Kid idea:</b> Think of your program like a friendly shopkeeper. <code>printf()</code> is the shopkeeper speaking to you: “Enter your age.” <code>scanf()</code> is the shopkeeper listening and writing your answer into the correct box.</div>
+    <div class="learn-map"><div class="learn-step"><div class="num">01</div><b>Ask</b><span>Use <code>printf()</code> to tell the user what to enter.</span></div><div class="learn-step"><div class="num">02</div><b>Receive</b><span>Use <code>scanf()</code> with the correct format specifier.</span></div><div class="learn-step"><div class="num">03</div><b>Store</b><span>Use <code>&amp;</code> with variables in <code>scanf()</code>.</span></div><div class="learn-step"><div class="num">04</div><b>Show</b><span>Use <code>printf()</code> to display the stored result.</span></div></div>
+    <table class="info-table"><tr><th>Data</th><th>Input</th><th>Output</th><th>Example</th></tr><tr><td>int</td><td><code>%d</code></td><td><code>%d</code></td><td>19</td></tr><tr><td>float</td><td><code>%f</code></td><td><code>%.2f</code></td><td>8.75</td></tr><tr><td>char</td><td><code> %c</code></td><td><code>%c</code></td><td>A</td></tr></table>
+    <div class="callout"><b>Remember:</b> The format specifier must match the type. For <code>scanf()</code>, <code>&amp;variable</code> gives the function the address where it should store the input.</div>
+  `,
+  code:{name:'interactive_input_output.c',overview:'A small program that reads an integer, decimal value and character, then prints them back in a clean format.',io:'Enter age: 19\nEnter CGPA: 8.75\nEnter grade: A\n\nAge: 19 | CGPA: 8.75 | Grade: A',lines:[
+    ['#include <stdio.h>','Includes the input/output functions printf() and scanf().'],
+    ['int main() {','Execution begins inside main().'],
+    ['    int age;\n    float cgpa;\n    char grade;','Create three variables for three different kinds of input.'],
+    ['    scanf("%d", &age);','Reads an integer and stores it in age.'],
+    ['    scanf("%f", &cgpa);','Reads a decimal value and stores it in cgpa.'],
+    ['    scanf(" %c", &grade);','Reads one character; the leading space skips leftover whitespace.'],
+    ['    printf("Age: %d | CGPA: %.2f | Grade: %c", age, cgpa, grade);','Prints the three stored values using matching format specifiers.'],
+    ['    return 0;\n}','Ends the program successfully.']
+  ]},
+  quiz:[
+    {q:'Which function is commonly used to take formatted input from the user in C?',opts:['printf()','scanf()','switch','return'],answer:1,explain:'scanf() reads formatted input and stores the values in variables supplied to it.'},
+    {q:'Which format specifier is commonly used for an int in scanf()?',opts:['%c','%f','%d','%s'],answer:2,explain:'%d is used to read an integer value.'},
+    {q:'Why is &age used in scanf("%d", &age)?',opts:['It gives the address where scanf should store the input','It converts age into a float','It prints age','It makes age constant'],answer:0,explain:'The address-of operator gives scanf the memory location of age so it can store the entered value there.'},
+    {q:'Which format is suitable for displaying a float with exactly two decimal places?',opts:['%d','%.2f','%c','%x'],answer:1,explain:'%.2f displays a floating-point value with two digits after the decimal point.'}
+  ],
+  challenge:{title:'Student Profile Input',prompt:"Write a C program that reads a student's roll number, CGPA and grade, then prints them in one clean line. Use int, float and char with the correct format specifiers.",sample:'Roll: 26\nCGPA: 8.40\nGrade: A'}
+},
+{
+  id:"switch", num:7, icon:"🏦", title:"Switch Case", short:"menu-driven programs",
+  tagline:"When you're testing one variable against many fixed values, switch reads cleaner than a long chain of else if statements.",
+  concept:`
+    <p class="lead">A <code>switch</code> statement compares one variable against several possible constant values and jumps straight to the matching <code>case</code>. It is ideal for menus, where the user picks option 1, 2, 3, or 4.</p>
+    <table class="kv-table">
+      <tr><th>Keyword</th><th>Role</th></tr>
+      <tr><td class="mono">switch(x)</td><td>The variable being tested</td></tr>
+      <tr><td class="mono">case 1:</td><td>Code to run if x equals 1</td></tr>
+      <tr><td class="mono">break;</td><td>Stops execution from falling through into the next case</td></tr>
+      <tr><td class="mono">default:</td><td>Runs if x matched no case at all</td></tr>
+    </table>
+    <div class="analogy">Without <code>break</code>, C keeps running every case below the one that matched, like a lift with no doors between floors, it just keeps going up. <code>break</code> is the door that stops it at the right floor.</div>
+    <p class="prose">The bank-menu program below also introduces the <code>do...while</code> loop, it guarantees the menu is shown <b>at least once</b>, then keeps repeating until the user picks option 4 (Exit). This is different from a plain <code>while</code> loop, which checks its condition BEFORE the first run and could, in theory, skip the body entirely.</p>
+    <div class="mini-head">switch vs if-else — when to pick which</div>
+    <ul class="point-list">
+      <li>Use <b>switch</b> when you are comparing ONE variable against several exact, fixed values (menu choices, day numbers, grade letters).</li>
+      <li>Use <b>if-else</b> when your conditions involve ranges, multiple variables, or logical combinations (age >= 18 && marks > 40), switch cannot express these directly.</li>
+    </ul>
+    <div class="mini-head">Where you will actually see this</div>
+    <div class="rw-grid">
+      <div class="rw-card"><div class="rw-icon">🏧</div><div class="rw-title">ATM machines</div><div class="rw-desc">Deposit / Withdraw / Check Balance / Exit is the exact menu structure real ATM software is built on, right down to the do-while loop that keeps the menu showing after every transaction.</div></div>
+      <div class="rw-card"><div class="rw-icon">🥤</div><div class="rw-title">Vending machines</div><div class="rw-desc">Each button press is a fixed numeric or character code that switch matches against, dispensing a different item per case.</div></div>
+      <div class="rw-card"><div class="rw-icon">📞</div><div class="rw-title">IVR phone menus</div><div class="rw-desc">"Press 1 for English, press 2 for Hindi" is literally a switch statement on the digit the caller presses.</div></div>
+    </div>
+  `,
+  code:{
+    name:"exercise3a_bank_menu.c",
+    overview:"This program combines two structures you have already learned into one working mini-application: a do-while loop keeps re-showing the menu after every transaction, and a switch inside that loop handles whichever option the user picked. The loop's exit condition (choice != 4) is checked only at the very end of each pass, which is exactly why the menu is guaranteed to display at least once even before the user has typed anything.",
+    io:`========== BANK MENU ==========\n1. Deposit\n2. Withdraw\n3. Check Balance\n4. Exit\n===============================\nEnter your choice: 1\nEnter amount to deposit: 5000\nDeposit Successful!\nUpdated Balance = Rs. 15000.00`,
+    lines:[
+      ["int main()\n{","Start of main()."],
+      ["    int choice;","Holds the user's menu selection (1-4)."],
+      ["    float balance = 10000.0, amount;","balance starts pre-loaded with Rs 10,000 as an opening balance. amount will hold whatever the user wants to deposit or withdraw."],
+      ["    do\n    {","Starts a do...while loop. Unlike a normal while loop, the code inside runs FIRST, and the condition is only checked at the end, guaranteeing the menu shows at least once."],
+      ["        printf(\"\\n========== BANK MENU ==========\\n\");","Prints a decorative header line for the menu."],
+      ["        printf(\"1. Deposit\\n2. Withdraw\\n3. Check Balance\\n4. Exit\\n\");","Lists the four available options."],
+      ["        printf(\"===============================\\n\");","Prints a closing divider line."],
+      ["        printf(\"Enter your choice: \");","Prompts the user to type 1, 2, 3, or 4."],
+      ["        scanf(\"%d\", &choice);","Reads the user's numeric choice."],
+      ["        switch(choice)\n        {","Begins testing choice against each case below."],
+      ["            case 1:","Runs if choice == 1 (Deposit)."],
+      ["                printf(\"Enter amount to deposit: \"); scanf(\"%f\", &amount);","Asks how much to deposit and reads it."],
+      ["                if(amount > 0)\n                {","Validates that the amount is positive, you cannot deposit a negative or zero amount."],
+      ["                    balance += amount;","Shorthand for balance = balance + amount; — adds the deposit to the running balance."],
+      ["                    printf(\"Deposit Successful!\\n\");\n                    printf(\"Updated Balance = Rs. %.2f\\n\", balance);","Confirms the deposit and prints the new balance to 2 decimal places."],
+      ["                }\n                else\n                {\n                    printf(\"Invalid deposit amount.\\n\");\n                }","If the amount was not positive, rejects it instead of silently corrupting the balance."],
+      ["                break;","Stops here so execution does not fall through into case 2's code below."],
+      ["            case 2:","Runs if choice == 2 (Withdraw)."],
+      ["                printf(\"Enter amount to withdraw: \"); scanf(\"%f\", &amount);","Asks for and reads the withdrawal amount."],
+      ["                if(amount <= balance && amount > 0)\n                {","Two rules joined with && — the amount must be affordable (not more than the balance) AND positive."],
+      ["                    balance -= amount;","Shorthand for balance = balance - amount; — deducts the withdrawal."],
+      ["                    printf(\"Withdrawal Successful!\\n\");\n                    printf(\"Remaining Balance = Rs. %.2f\\n\", balance);","Confirms and prints the updated balance."],
+      ["                }\n                else\n                {\n                    printf(\"Insufficient Balance or Invalid Amount.\\n\");\n                }","Rejects the withdrawal if either rule failed, protects against overdrawing the account."],
+      ["                break;","Exits the switch so it does not run case 3's code too."],
+      ["            case 3:","Runs if choice == 3 (Check Balance)."],
+      ["                printf(\"Current Balance = Rs. %.2f\\n\", balance);\n                break;","Simply prints the current balance, then breaks out."],
+      ["            case 4:","Runs if choice == 4 (Exit)."],
+      ["                printf(\"Thank you for using our banking system!\\n\");\n                break;","Prints a goodbye message. break here is not strictly required since it is the last case, but it is good habit to always include it."],
+      ["            default:","Runs only if choice matched none of cases 1-4, e.g. the user typed 9."],
+      ["                printf(\"Invalid Choice! Please select between 1 and 4.\\n\");","Tells the user their input was invalid, no break needed since default is always last."],
+      ["        }","Closes the switch block."],
+      ["    } while(choice != 4);","The loop condition, checked after each pass: keep repeating the whole do block as long as choice is NOT 4. The moment the user chooses 4, the loop stops."],
+      ["    return 0;\n}","Ends the program successfully."]
+    ]
+  },
+  quiz:[
+    {q:"In the bank menu program, why does every case end with a break statement?",opts:["break is required by C's grammar and the program will not compile without it","Without break, execution would keep running into the code of the next case below it","break makes the switch statement run faster"],answer:1,explain:"C's switch statement falls through by default, once a case matches, it keeps executing every line below it, including the next case's code, unless a break stops it."},
+    {q:"Why is the bank menu built with a do-while loop instead of a plain while loop?",opts:["do-while runs its body at least once before checking the condition, guaranteeing the menu shows the first time even before any input exists","There is no real difference between the two in C","while loops cannot contain a switch statement"],answer:0,explain:"A plain while checks its condition BEFORE the first run and could skip the body entirely. do-while checks AFTER, so the menu is guaranteed to display at least once."},
+    {q:"What happens if the user types 9 at the menu prompt?",opts:["The program crashes","It matches case 4 by mistake","None of the case labels match, so the default case runs, printing the invalid choice message"],answer:2,explain:"switch only matches exact values. 9 does not equal 1, 2, 3, or 4, so control falls through to default, which handles any unmatched value."},
+    {q:"In case 2 (Withdraw), why is the condition written as amount <= balance && amount > 0 rather than just amount <= balance?",opts:["Both conditions mean the same thing, so it makes no difference","Without checking amount > 0 too, a negative or zero withdrawal would incorrectly be treated as valid, since it would also satisfy amount <= balance","C requires at least two conditions in every if statement"],answer:1,explain:"A negative amount is always <= balance, so without the amount > 0 check, someone could enter a negative withdrawal and it would wrongly pass validation."},
+    {q:"What does balance += amount; do?",opts:["Compares balance and amount for equality","Shorthand for balance = balance + amount;, adding amount to balance","Shorthand for balance = amount;, replacing balance entirely"],answer:1,explain:"+= is a compound assignment operator, x += y; is shorthand for x = x + y;. Here it adds the deposited amount onto the running balance."},
+    {q:"Which loop condition keeps the bank menu running?",opts:["while(choice == 4)","while(choice != 4)","while(balance > 0)"],answer:1,explain:"The do-while loop's condition is choice != 4, it keeps looping AS LONG AS the choice is not 4, and stops the moment the user selects Exit (4)."}
+  ],
+  challenge:{
+    title:"Simple Calculator using switch",
+    tag:"Challenge 6",
+    prompt:`<p>Write a menu-free calculator: read two numbers and an operator character (+, -, *, /), then use switch to perform the right operation. Handle division by zero as a special case.</p>`,
+    sample:`Enter first number: 12\nEnter second number: 4\nEnter operator (+ - * /): /\n\nResult = 3.00`,
+    hints:[
+      "You can switch directly on a char, exactly the way case 1: works for an int, just write case '+':, case '-':, and so on.",
+      "Before performing division, check if the second number is 0 inside that specific case and print an error instead.",
+      "Use float for both numbers so division gives a proper decimal answer, not a truncated integer one."
+    ],
+    solution:{
+      overview:"A switch on a char operator, with four cases matching the four arithmetic symbols, plus a default case to catch any operator the user did not expect. The division case includes its own nested if to guard against dividing by zero.",
+      lines:[
+        ["#include <stdio.h>","Needed for printf/scanf."],
+        ["int main() {","Entry point."],
+        ["    float num1, num2, result;\n    char op;","Two floats for the operands, and a char for the operator symbol."],
+        ["    printf(\"Enter first number: \"); scanf(\"%f\", &num1);\n    printf(\"Enter second number: \"); scanf(\"%f\", &num2);\n    printf(\"Enter operator (+ - * /): \"); scanf(\" %c\", &op);","Reads both numbers and the operator, with the leading space before %c."],
+        ["    switch(op)\n    {","Switches directly on the character op."],
+        ["        case '+': result = num1 + num2; break;","Matches the '+' character literally, exactly like matching an int value in the bank menu."],
+        ["        case '-': result = num1 - num2; break;","Matches '-'."],
+        ["        case '*': result = num1 * num2; break;","Matches '*'."],
+        ["        case '/':\n            if (num2 != 0)\n                result = num1 / num2;\n            else {\n                printf(\"Error: Division by zero!\\n\");\n                return 0;\n            }\n            break;","Matches '/', but guards against dividing by zero first, if num2 is 0, it prints an error and exits immediately instead of computing an invalid result."],
+        ["        default:\n            printf(\"Invalid operator!\\n\");\n            return 0;","Catches any character that is not one of the four expected operators."],
+        ["    }","Closes the switch."],
+        ["    printf(\"\\nResult = %.2f\\n\", result);\n    return 0;\n}","Prints the final result, only reached if none of the early return 0; lines triggered."]
+      ]
+    }
+  }
+},
+{
+  id:"triangle", num:8, icon:"📐", title:"if...else vs switch", short:"same logic, two structures",
+  tagline:"The same decision can often be written two ways — comparing them side by side shows exactly when each style is the better fit.",
+  concept:`
+    <p class="lead">Given three side lengths, we want to classify a triangle as <b>Equilateral</b> (all sides equal), <b>Isosceles</b> (exactly two sides equal), or <b>Scalene</b> (all different), and first reject any input that cannot form a triangle at all.</p>
+    <div class="analogy">Three lengths only form a real triangle if any two sides together are longer than the third, picture trying to build a triangle from two short sticks and one very long one: the short sticks just cannot reach each other.</div>
+    <table class="kv-table">
+      <tr><th>Rule</th><th>Condition</th></tr>
+      <tr><td>Invalid triangle</td><td class="mono">a+b &le; c  ||  a+c &le; b  ||  b+c &le; a</td></tr>
+      <tr><td>Equilateral</td><td class="mono">a == b && b == c</td></tr>
+      <tr><td>Isosceles</td><td class="mono">a == b || b == c || a == c</td></tr>
+      <tr><td>Scalene</td><td>None of the above match</td></tr>
+    </table>
+    <p class="prose">The first version below solves this directly with <code>if...else if...else</code>. The second version first works out a small numeric <b>type code</b> (1, 2, or 3) using the exact same logic, then hands that single number to a <code>switch</code> to decide what to print. This is a common real pattern: switch cannot test complex conditions like <code>a==b && b==c</code> directly, since it only matches exact constant values, so you pre-compute a simple number first and switch on that instead.</p>
+    <div class="mini-head">Where you will actually see this</div>
+    <div class="rw-grid">
+      <div class="rw-card"><div class="rw-icon">📦</div><div class="rw-title">Shipping cost tiers</div><div class="rw-desc">Courier apps classify a package's weight into tiers (light/medium/heavy) using if-else ranges, then may switch on the resulting tier code to pick a pricing rule.</div></div>
+      <div class="rw-card"><div class="rw-icon">🧾</div><div class="rw-title">Income tax slabs</div><div class="rw-desc">Government tax calculators are essentially a long if-else-if chain over income ranges, extremely similar in structure to the grade calculator you built earlier.</div></div>
+      <div class="rw-card"><div class="rw-icon">🎮</div><div class="rw-title">Game controller mapping</div><div class="rw-desc">Reading which button was pressed (a fixed set of button codes) is a natural switch, while deciding what happens next based on combined game state (health, ammo, position) is natural if-else.</div></div>
+    </div>
+  `,
+  subprograms:[
+    {
+      name:"Version 1 — if...else if...else",
+      note:"Tests the classification rules directly, one after another, in the order that matters (invalid check must come first).",
+      overview:"This version answers the whole classification question in a single chain, in a carefully chosen order: it must check validity FIRST, since an impossible triangle should never be labelled by shape at all. Just as importantly, checking equilateral before isosceles matters, because every equilateral triangle also technically satisfies the isosceles condition (a==b), so the stricter check must come first or it would never be reached.",
+      code:{
+        name:"triangle_ifelse.c",
+        io:`Enter three sides of the triangle: 8 8 5\nIsosceles Triangle`,
+        lines:[
+          ["    int a, b, c;","Declares the three side lengths."],
+          ["    printf(\"Enter three sides of the triangle: \");\n    scanf(\"%d %d %d\", &a, &b, &c);","Prompts for and reads the three sides."],
+          ["    // Check Triangle Validity","Comment marking the guard check."],
+          ["    if ((a + b <= c) || (a + c <= b) || (b + c <= a))","Checks all three ways a triangle could be geometrically impossible, joined by ||. True if ANY one of the three fails the triangle inequality."],
+          ["        printf(\"Invalid Triangle\");","Runs if the shape is impossible, no valid triangle exists with these sides."],
+          ["    else if (a == b && b == c)","Only checked once we know it IS a valid triangle. Tests if all three sides are equal, checked before the isosceles condition for the reason explained in the overview above."],
+          ["        printf(\"Equilateral Triangle\");","Runs when all three sides match exactly."],
+          ["    else if (a == b || b == c || a == c)","Checked only if it was not equilateral. Tests if ANY pair of sides is equal (using || — only one pair needs to match)."],
+          ["        printf(\"Isosceles Triangle\");","Runs when exactly two sides are equal, for 8, 8, 5 this is the branch taken, since a==b (8==8) is true."],
+          ["    else","Reached only if the triangle is valid, not equilateral, and no pair matched."],
+          ["        printf(\"Scalene Triangle\");","Prints Scalene, all three sides are different lengths."]
+        ]
+      }
+    },
+    {
+      name:"Version 2 — switch (via a type code)",
+      note:"Computes the same classification first, storing it as a plain integer, then switches on that integer.",
+      overview:"Since switch can only compare a variable against fixed constants, this version separates the THINKING (working out which category the triangle belongs to) from the DISPLAYING (printing the right message). The thinking half uses exactly the same if-else logic as version 1, just storing a number instead of printing directly; the displaying half is a clean switch that reads almost like a lookup table.",
+      code:{
+        name:"triangle_switch.c",
+        io:`Enter three sides of the triangle: 7 7 5\nIsosceles Triangle`,
+        lines:[
+          ["    int a, b, c;\n    int type;","type will hold a simple numeric code: 1 for Equilateral, 2 for Isosceles, 3 for Scalene."],
+          ["    printf(\"Enter three sides of the triangle: \");\n    scanf(\"%d %d %d\", &a, &b, &c);","Reads the three sides, same as before."],
+          ["    if ((a + b <= c) || (a + c <= b) || (b + c <= a))\n    {\n        printf(\"Invalid Triangle\");\n        return 0;\n    }","Same validity check as version 1. If invalid, it prints the message and immediately return 0; exits the whole program right here, the rest of the code below never runs for an invalid triangle."],
+          ["    if (a == b && b == c)\n        type = 1;","If it is a valid triangle and all sides match, store the code 1 into type."],
+          ["    else if (a == b || b == c || a == c)\n        type = 2;","If exactly two sides match, store code 2."],
+          ["    else\n        type = 3;","Otherwise, store code 3 (scalene)."],
+          ["    switch(type)\n    {","Now switches on the plain integer type, this is why we had to compute it first: switch can only compare against exact constant values like 1, 2, 3, not full conditions like a==b."],
+          ["        case 1:\n            printf(\"Equilateral Triangle\");\n            break;","Matches when type is 1."],
+          ["        case 2:\n            printf(\"Isosceles Triangle\");\n            break;","Matches when type is 2, this is the branch taken for sides 7, 7, 5."],
+          ["        case 3:\n            printf(\"Scalene Triangle\");\n            break;","Matches when type is 3."],
+          ["        default:\n            printf(\"Invalid Input\");","A safety net, in practice type will always be 1, 2 or 3 here, but default guards against any unexpected value."],
+          ["    }","Closes the switch block."]
+        ]
+      }
+    }
+  ],
+  quiz:[
+    {q:"Why can't the triangle program switch directly on something like (a == b && b == c) instead of pre-computing a type code?",opts:["switch can only match a variable against fixed constant values (like 1, 2, 3) — it cannot evaluate a full condition as a case","switch statements do not support the && operator anywhere in the program","It actually can — pre-computing type was unnecessary"],answer:0,explain:"switch(x) followed by case VALUE: only checks equality between x and a constant. It has no way to evaluate an expression like a==b && b==c as a case condition."},
+    {q:"In version 1, why must the equilateral check (a==b && b==c) come before the isosceles check (a==b || b==c || a==c)?",opts:["Order does not matter here at all","Because an equilateral triangle also satisfies the isosceles OR condition, so checking isosceles first would wrongly label every equilateral triangle as isosceles","Because C requires && conditions to be written before || conditions"],answer:1,explain:"If a==b and b==c are both true (equilateral), then a==b || b==c is ALSO true. Since C stops at the first true condition in an if-else-if chain, isosceles being checked first would incorrectly catch equilateral triangles too."},
+    {q:"For sides 2, 2, 10, what does the program correctly report, and why?",opts:["Isosceles Triangle, because two sides are equal","Invalid Triangle, because 2 + 2 = 4 is not greater than 10, failing the triangle inequality","Equilateral Triangle, by default"],answer:1,explain:"Even though two sides are equal, the triangle inequality check runs FIRST. 2+2 <= 10 is true, so it is flagged Invalid before the equal-sides checks are ever reached."},
+    {q:"In version 2, what does return 0; do when the triangle is invalid?",opts:["Nothing special, it just moves to the next line","It immediately ends the whole program right there, so the type-code and switch logic below never execute for invalid input","It restarts the program from the beginning"],answer:1,explain:"return 0; inside main() ends the program immediately. Placed inside the invalid-triangle block, it guarantees the rest of the classification code never runs when the input is geometrically invalid."},
+    {q:"What numeric type code does version 2 assign for a Scalene triangle?",opts:["1","2","3"],answer:2,explain:"The program assigns type = 1 for equilateral, type = 2 for isosceles, and falls through to type = 3 in the final else, which covers scalene."},
+    {q:"Which style (if-else vs switch) would you naturally reach for if you needed to test a combined condition like age >= 18 && hasID?",opts:["switch, because it always runs faster","if-else, because switch cannot directly test a combined logical condition like this — it only matches a variable against fixed constants","Either one, they are functionally identical for this case"],answer:1,explain:"switch can only compare one variable against exact constant values. A combined logical condition involving && needs if-else, or a pre-computed helper variable the way version 2 of the triangle program does."}
+  ],
+  challenge:{
+    title:"Day of the Week Namer",
+    tag:"Challenge 7",
+    prompt:`<p>Write a program that reads an integer from 1 to 7 and prints the corresponding day name (1 = Monday ... 7 = Sunday) using a switch statement. Print an error for any other number.</p>`,
+    sample:`Enter day number (1-7): 3\n\nDay: Wednesday`,
+    hints:[
+      "This needs no pre-computed type code, unlike the triangle switch version, the input number IS already the exact thing you want to switch on.",
+      "You will need seven case labels, one for each day, all following the same case N: printf(...); break; pattern from the bank menu.",
+      "Do not forget a default case for numbers outside 1-7, like 0 or 9."
+    ],
+    solution:{
+      overview:"A textbook direct-mapping switch: the input value maps one-to-one onto a fixed, known set of cases, with no computation needed beforehand, this is the simplest and most natural use case for switch.",
+      lines:[
+        ["#include <stdio.h>","Needed for printf/scanf."],
+        ["int main() {","Entry point."],
+        ["    int day;","Holds the day number the user enters."],
+        ["    printf(\"Enter day number (1-7): \"); scanf(\"%d\", &day);","Reads the day number."],
+        ["    switch(day)\n    {","Switches directly on the number typed in, no helper variable required."],
+        ["        case 1: printf(\"Day: Monday\\n\"); break;\n        case 2: printf(\"Day: Tuesday\\n\"); break;\n        case 3: printf(\"Day: Wednesday\\n\"); break;\n        case 4: printf(\"Day: Thursday\\n\"); break;\n        case 5: printf(\"Day: Friday\\n\"); break;\n        case 6: printf(\"Day: Saturday\\n\"); break;\n        case 7: printf(\"Day: Sunday\\n\"); break;","Seven cases, one per day, each ending in break so execution does not fall through into the next day's case."],
+        ["        default:\n            printf(\"Invalid day number! Enter 1-7.\\n\");","Catches any number outside the valid range."],
+        ["    }","Closes the switch."],
+        ["    return 0;\n}","Ends the program."]
+      ]
+    }
+  }
+}
+];
+const UNIT2 = [
+{
+ id:'decomposition',num:1,icon:'🧩',title:'Problem Decomposition',short:'Break a big problem into tiny jobs',tagline:'Big problems become friendly when we cut them into small, named jobs.',
+ concept:`
+ <p class="lead">Problem decomposition means taking one large programming problem and splitting it into smaller tasks that are easier to understand, code, test, and fix.</p>
+ <div class="analogy"><b>Kid idea:</b> Imagine your teacher says, “Make a student report.” You would not do everything in one giant step. You would collect marks → calculate total → calculate average → decide grade → print the report. Each little job can become a function.</div>
+ <h3>How to think</h3><div class="step-list"><div class="step"><b>1. Find the inputs.</b><span>What information enters the program?</span></div><div class="step"><b>2. Find the output.</b><span>What should the program finally show?</span></div><div class="step"><b>3. Split the middle.</b><span>Turn the work into small jobs.</span></div><div class="step"><b>4. Name the jobs.</b><span>A job named <code>calculateAverage()</code> is easier to understand than a mystery block of code.</span></div></div>
+ <div class="callout"><b>Remember:</b> A function should ideally have one clear responsibility. If you can describe its job in one short sentence, you are probably on the right track.</div>
+ <h3>Lab connection — Exercise 4(a)</h3><p>The lab manual asks you to use pass-by-value to compute the sum of the first <i>n</i> even numbers <b>by breaking the problem into sub-tasks</b>. This is decomposition in action.</p>`,
+ code:{name:'Exercise 4(a) — Sum of first n even numbers',overview:'This is a guided solution for the lab task. The function receives n, calculates the first n even numbers (2, 4, 6, …), adds them, and returns the answer.',io:'Enter n: 5\nSum = 30',lines:[
+ ['int sumFirstNEven(int n) {','We create one small function whose single job is calculating the sum.'],
+ ['    int sum = 0;','Start the running total at zero.'],
+ ['    for (int i = 1; i <= n; i++)','Repeat once for each of the first n even numbers.'],
+ ['        sum += 2 * i;','The i-th even number is 2 × i: 2, 4, 6, 8, …'],
+ ['    return sum;','Send the finished answer back to main.'],
+ ['}','Function ends.'],
+ ['int main() {','Program starts here.'],
+ ['    int n; scanf("%d", &n);','Read how many even numbers we want.'],
+ ['    printf("Sum = %d", sumFirstNEven(n));','Call the helper and print the returned result.'],
+ ['    return 0;','End successfully.'],['}',['Close main.']]
+]},
+ lab:{num:'4(a)',title:'Using pass-by-value, design a function to compute the sum of the first n even numbers by breaking the problem into sub-tasks.'},
+ quiz:[
+ ['What does decomposition mean?',['Making one huge function','Breaking a problem into smaller tasks','Removing all functions','Only writing comments'],1,'Decomposition means splitting a big job into smaller jobs.'],
+ ['Which is the best function name for finding an average?',['doThing()','x()','calculateAverage()','abc123()'],2,'A good name tells us the function’s job.'],
+ ['For n = 4, the first four even numbers are…',['1,2,3,4','2,4,6,8','0,1,2,3','4,6,8,10'],1,'Start at 2 and add 2 each time.']
+ ],
+ challenge:{title:'Mission: Break the Result Problem',prompt:'Design five tiny steps for a student report program: inputs, total, average, grade, and output. Then decide which steps should become functions.',hints:['Start with the input: marks.','Ask what calculation can be reused.','Give each helper a clear verb-based name.']}
+},
+{
+ id:'passvalue',num:2,icon:'📦',title:'Pass by Value',short:'The function receives a copy',tagline:'A normal C argument is like handing someone a photocopy.',
+ concept:`<p class="lead">When you pass a normal variable to a function in C, the function receives a <b>copy</b> of the value. Changing that parameter changes the copy, not the original variable in <code>main()</code>.</p><div class="analogy"><b>Photocopy example:</b> You give your friend a photocopy of your notes. They can scribble on their copy. Your original notebook does not change.</div><div class="compare"><div><b>main()</b><p><code>int x = 10;</code></p><small>Original value</small></div><div class="arrow">→</div><div><b>function()</b><p><code>change(x)</code></p><small>Receives a copy</small></div></div><h3>What the lab wants</h3><p>Exercise 4(a) specifically asks for a pass-by-value function that computes the sum of the first <i>n</i> even numbers. The function can calculate and <code>return</code> a result without modifying the original <code>n</code>.</p>`,
+ code:{name:'Exercise 4(a) — Pass-by-value example',overview:'Notice that n is passed normally. The function can use n for its calculation, but changing its parameter would not change main’s original variable.',io:'Before call: n = 5\nReturned sum = 30\nAfter call: n = 5',lines:[['int change(int x) {','x is a local parameter — it is a copy of the value supplied by the caller.'],['    x = 99;','We change the copy.'],['    return x;','Return the changed copy if we want it.'],['}','The local copy disappears when the function returns.'],['int main() {','Start main.'],['    int n = 5;','The original n is 5.'],['    change(n);','A copy of 5 is passed to the function.'],['    printf("%d", n);','n is still 5 because the function did not receive its address.'],['}', 'End main.'] ]},
+ lab:{num:'4(a)',title:'Using pass-by-value, design a function to compute the sum of the first n even numbers by breaking the problem into sub-tasks.'},
+ quiz:[['If change(int x) sets x = 99, what happens to the caller’s original variable?',['It becomes 99','It becomes 0','It stays unchanged','The program always crashes'],2,'Normal arguments are passed by value, so x is a copy.'],['Why can the function still return a new result?',['return sends a value back to the caller','C copies the whole computer','printf changes memory'],0,'return explicitly sends a value back.'],['Which call passes the value of n normally?',['change(&n)','change(n)','change(*n)','change(address n)'],1,'change(n) passes the value.']],
+ challenge:{title:'Copy or Original?',prompt:'Predict the output before running a small program where a function changes its parameter. Then explain why main() keeps its original value.',hints:['Draw two boxes named original and copy.','Put the same number in both.','Change only the copy.']}
+},
+{
+ id:'pointers',num:3,icon:'📍',title:'Pointers & Pass by Reference',short:'Use an address to reach the original',tagline:'A pointer stores an address — like a locker number.',
+ concept:`<p class="lead">A pointer is a variable that stores the <b>memory address</b> of another variable. This lets a function reach the original data rather than working only on a copy.</p><div class="analogy"><b>Locker example:</b> Giving someone your book is like giving a copy. Giving them your locker number tells them exactly where the original book is. In C, <code>&amp;x</code> gives the address and <code>*p</code> lets us access the value at that address.</div><table class="info-table"><tr><th>Syntax</th><th>Kid meaning</th></tr><tr><td><code>&amp;x</code></td><td>“Where is x?” → address of x</td></tr><tr><td><code>int *p</code></td><td>p is a pointer that can store an int address</td></tr><tr><td><code>*p</code></td><td>“What is inside that address?” → value at the address</td></tr></table><h3>Why this matters</h3><p>If a function must modify the caller’s original variable, pass its address. The classic lab example is swapping two variables.</p>`,
+ code:{name:'Pointer swap — guided lab pattern',overview:'The function receives addresses. Dereferencing those addresses with * lets it modify the original x and y.',io:'Before: x = 10, y = 20\nAfter: x = 20, y = 10',lines:[['void swap(int *a, int *b) {','a and b store addresses of the caller’s variables.'],['    int temp = *a;','Read the original value stored at address a.'],['    *a = *b;','Put b’s original value into a’s original variable.'],['    *b = temp;','Put the saved value into b’s original variable.'],['}','Swap is complete.'],['int x = 10, y = 20;','Two original variables live in main.'],['swap(&x, &y);','Pass their addresses, not just their values.'],['printf("%d %d", x, y);','The originals are now changed.']]},
+ lab:{num:'4(a)',title:'Pass-by-value function + pointer/reference concept. Pointer use also explains why address operators appear in C input and swapping.'},
+ quiz:[['Which operator gives the address of x?',['*','&','%','!'],1,'&x means the address of x.'],['If p stores the address of x, what does *p mean?',['Address of p','Value at the address stored in p','A new pointer','A loop'],1,'*p dereferences p.'],['Why does swap(int *a, int *b) change the caller’s variables?',['It receives their addresses','It receives random values','It uses printf'],0,'The addresses let the function reach the originals.']],
+ challenge:{title:'Mission: Swap Without Magic',prompt:'Trace x=10 and y=20 through swap(&x,&y). Write what a, b, *a and *b mean at each line.',hints:['&x is an address, not 10.','*a is the value stored at a’s address.','Use a temporary variable to avoid losing the first value.']}
+},
+{
+ id:'helpers',num:4,icon:'🛠️',title:'Helper Functions & Return Values',short:'Give every job a name',tagline:'One person per job makes a team easier to manage — functions work the same way.',
+ concept:`<p class="lead">A helper function is a small function created to perform one specific part of a larger problem. Good helpers make programs easier to read, test, reuse, and debug.</p><div class="analogy"><b>College fest example:</b> One person handles registration, another handles food, another handles stage, and another handles photos. You can ask the right person for the right job. A modular C program does the same thing with functions.</div><h3>Function recipe</h3><div class="cards"><div><b>1. Name</b><p><code>calculateTotal()</code></p></div><div><b>2. Inputs</b><p>What data does it need?</p></div><div><b>3. Work</b><p>Do one focused job.</p></div><div><b>4. Return</b><p>Send the answer back when needed.</p></div></div><p>The syllabus asks students to design helper functions to modularize complex problems and improve solution clarity, including functions with return values.</p>`,
+ code:{name:'Exercise 5(a) — Three helper functions',overview:'The student marks problem is split into exactly the helper jobs named in the lab manual: calculateTotal(), calculateAverage(), and findGrade().',io:'Marks: 80 75 90\nTotal = 245\nAverage = 81.67\nGrade = B',lines:[['int calculateTotal(int a, int b, int c) {','Helper 1: add the marks.'],['    return a + b + c;','Send the total back.'],['}','End helper 1.'],['float calculateAverage(int total) {','Helper 2: calculate the average from the total.'],['    return total / 3.0f;','Use 3.0f so the result is decimal.'],['}','End helper 2.'],['char findGrade(float avg) {','Helper 3: decide the grade from the average.'],['    if (avg >= 90) return \'A\';','90 and above → A.'],['    else if (avg >= 75) return \'B\';','75–89.99 → B.'],['    else if (avg >= 60) return \'C\';','60–74.99 → C.'],['    return \'D\';','Anything lower → D.'],['}',['End helper 3.']] ]},
+ lab:{num:'5(a)',title:'Use separate helper functions for calculateTotal(), calculateAverage(), and findGrade().'},
+ quiz:[['What is the main reason for helper functions?',['Make code longer','Give small jobs clear names','Avoid all variables','Remove main()'],1,'Helpers split a larger solution into understandable pieces.'],['Which function should return a grade?',['calculateAverage()','findGrade()','calculateTotal()'],1,'findGrade() is responsible for the grade.'],['Why return a value?',['To send a result back to the caller','To delete a variable','To start a loop'],0,'return communicates the function’s result.']],
+ challenge:{title:'Function Team Builder',prompt:'Take a student report and assign exactly one job to each of four functions. Write their names and what each returns.',hints:['Think verb + noun.','Keep each job small.','Ask whether main() can read like a story when helpers are used.']}
+},
+{
+ id:'modular',num:5,icon:'🧭',title:'Modular Solution Design',short:'Plan first, then code',tagline:'Good programmers do not just type faster — they plan the jobs first.',
+ concept:`<p class="lead">Modular design means building a program from small modules (usually functions) that work together. The syllabus connects this to solving complex problems, helper functions, return values, and clearer solutions.</p><div class="analogy"><b>Restaurant example:</b> Order comes in → kitchen prepares food → cashier calculates bill → server delivers. Each part has a job, but together they complete the customer’s request.</div><h3>Plan → Code → Test</h3><ol><li>Write the problem in one sentence.</li><li>List inputs and outputs.</li><li>Break the process into functions.</li><li>Choose what each function receives.</li><li>Choose what each function returns.</li><li>Test each helper separately.</li></ol><h3>Lab connections</h3><p><b>Exercise 4(b)</b> asks for a modular student marks program. <b>Exercise 5(b)</b> asks for Celsius/Fahrenheit/Kelvin conversion helpers. Both are excellent examples of turning a large task into reusable pieces.</p>`,
+ code:{name:'Exercise 5(b) — Temperature conversion helpers',overview:'Each conversion is isolated in a helper. main() can call whichever conversion the user needs.',io:'Celsius = 25\nFahrenheit = 77.00\nKelvin = 298.15',lines:[['float cToF(float c) {','Convert Celsius to Fahrenheit.'],['    return (c * 9.0f / 5.0f) + 32;','Apply the conversion formula and return the result.'],['}', 'End helper.'],['float fToC(float f) {','Convert Fahrenheit to Celsius.'],['    return (f - 32) * 5.0f / 9.0f;','Apply the formula.'],['}', 'End helper.'],['float cToK(float c) {','Convert Celsius to Kelvin.'],['    return c + 273.15f;','Add 273.15 and return.'],['}', 'End helper.']]},
+ lab:{num:'4(b)',title:'Implement a modular program that calculates the total marks, average, and grade of a student.'},
+ lab2:{num:'5(b)',title:'Implement a program with helper functions to convert Celsius→Fahrenheit, Fahrenheit→Celsius, and Celsius→Kelvin.'},
+ quiz:[['What should you decide before writing all the function code?',['Inputs and outputs','Colors','Keyboard brand','File name only'],0,'A function contract starts with what goes in and what comes out.'],['Which design is more modular?',['One 100-line function','Separate helpers with clear jobs','Everything inside printf'],1,'Small focused helpers are easier to understand and test.'],['Why is cToF() reusable?',['It has a clear input and return value','It never runs','It contains no variables'],0,'A clear function contract lets other parts call it again.']],
+ challenge:{title:'Draw the Program',prompt:'Design a function map for a student result program. Show which helper calls which and what value moves between them.',hints:['Start at main().','Draw arrows for returned values.','Do not make one helper responsible for everything.']}
+},
+{
+ id:'recursion',num:6,icon:'🪆',title:'Recursion Fundamentals',short:'A function solving a smaller version of itself',tagline:'Recursion is a function saying: “I can solve this — but first I will ask myself to solve a smaller piece.”',
+ concept:`<p class="lead">Recursion happens when a function calls itself. To stop forever, every recursive solution needs a <b>base case</b> and a <b>smaller step</b> that moves toward it.</p><div class="analogy"><b>Russian dolls:</b> Open the big doll and you find a smaller doll. Open that one and find another. Eventually you reach the smallest doll. That smallest one is like the base case.</div><div class="cards"><div><b>Base case</b><p>The stopping rule.</p></div><div><b>Recursive case</b><p>Call the same function with a smaller problem.</p></div><div><b>Progress</b><p>Every call must move toward the base case.</p></div></div><h3>Lab connections</h3><p>Exercise 6 asks for recursive reverse, GCD using Euclid’s algorithm, and palindrome checking. Exercise 7 extends recursion to arrays and strings.</p>`,
+ code:{name:'Exercise 6(b) — Recursive GCD',overview:'Euclid’s algorithm reduces gcd(a,b) to gcd(b,a%b). When b becomes zero, a is the answer.',io:'Enter a: 48\nEnter b: 18\nGCD = 6',lines:[['int gcd(int a, int b) {','Function receives two numbers.'],['    if (b == 0)','Base case: when the second number becomes zero, stop.'],['        return a;','The first number is the GCD.'],['    return gcd(b, a % b);','Recursive case: replace the problem with a smaller one.'],['}', 'Function ends.']]},
+ lab:{num:'6',title:'Design recursive functions for reverse number, GCD using Euclid’s algorithm, and palindrome checking.'},
+ quiz:[['What must every safe recursive solution have?',['Only a loop','A base case and progress toward it','A pointer always','A switch'],1,'Without a stopping rule, recursion can continue indefinitely.'],['For gcd(48,18), the next smaller problem is…',['gcd(18,12)','gcd(48,48)','gcd(18,48)'],0,'48 % 18 = 12, so the next call is gcd(18,12).'],['What is the base case in gcd(a,b)?',['a==b','b==0','a==0 always'],1,'When b is zero, a is the GCD.']],
+ challenge:{title:'Recursion Detective',prompt:'For factorial(4), write the chain 4! → 3! → 2! → 1! → base case. Then write the values while returning.',hints:['Each call should make the input smaller.','Separate “going down” from “coming back up”.']}
+},
+{
+ id:'stack',num:7,icon:'🧠',title:'Call Stack + Recursive Lab Missions',short:'See recursion happen step by step',tagline:'The call stack remembers where each function call must return.',
+ concept:`<p class="lead">Every time a function is called, C keeps information about that call on the <b>call stack</b>. Recursive functions create many stack frames, one for each active call. When the base case is reached, the calls return one by one.</p><div class="analogy"><b>Plate stack:</b> Put plates on top as calls go deeper. You remove the top plate first. That is why the last recursive call returns first.</div><h3>What to trace</h3><ul><li>What are the current arguments?</li><li>What is the base case?</li><li>What is the next recursive call?</li><li>When does the function start returning?</li><li>How many calls happened?</li></ul><h3>Unit 2 lab coverage</h3><p><b>Exercise 6:</b> reverse a number, GCD, palindrome. <b>Exercise 7:</b> recursive maximum in an integer array, recursive vowel counting, and recursive string reverse. The lab manual lists these tasks as Exercises 6 and 7.</p>`,
+ code:{name:'Exercise 6(a) — Recursive reverse of a number',overview:'This version demonstrates the idea of taking the last digit, building the reversed number, and recursively processing the remaining digits. Corner cases such as 0 and one-digit inputs should be tested.',io:'Input: 12345\nReverse: 54321',lines:[['int reverseNumber(int n, int rev) {','n is the part still waiting to be processed; rev stores the answer built so far.'],['    if (n == 0)','Base case: no digits remain.'],['        return rev;','Return the completed reversed number.'],['    return reverseNumber(n / 10, rev * 10 + n % 10);','Remove the last digit from n and append it to rev.'],['}', 'Each call handles a smaller n.'] ]},
+ lab:{num:'6(a)',title:'Design a recursive function to reverse a number; verify 12345, 0, and single-digit inputs.'},
+ lab2:{num:'6(c)',title:'Use recursion to check if input is a palindrome.'},
+ lab3:{num:'7(a-c)',title:'Recursive maximum in an integer array; recursive vowel count; recursive string reverse.'},
+ quiz:[['What does the call stack store for recursive calls?',['Active function-call information','Only printed text','The keyboard layout'],0,'Each active call needs information such as parameters and where to return.'],['For reverseNumber(12345,0), what becomes smaller each call?',['The number n','The screen','The computer'],0,'n is divided by 10 each time.'],['Why should you test 0 and one-digit inputs?',['They are corner cases','They are invalid C syntax','They make recursion impossible'],0,'Corner cases reveal missing base-case logic.']],
+ challenge:{title:'Stack Trace Mission',prompt:'Trace recursive digit-counting for 572. Draw the three calls and then count how many calls were made.',hints:['572 → 57 → 5 → 0.','The base case is reached when the remaining number is 0.']}
+}
+];
+const SESSION_MAP={
+ inputoutput:['Unit 1 · S9 — user-defined input/output with printf and scanf'],
+ datatypes:['Unit 1 · S1 — simple data types: int, float, char; size, range and applications'],
+ expressions:['Unit 1 · S2 — assignment and arithmetic expressions','Unit 1 · S3–S4 — declarations, assignments, expressions and operator precedence'],
+ swapping:['Unit 1 · S3–S4 — swapping with and without a temporary variable'],
+ ifelse:['Unit 1 · S5 — decision making with if...else if...else','Unit 1 · S7–S8 — classification practice'],
+ boolean:['Unit 1 · S6 — Boolean expressions for decision making','Unit 1 · S7–S8 — odd/even, sign, vowel, leap year, character class, loan and scholarship checks'],
+ switch:['Unit 1 · S10 — menu-driven switch','Unit 1 · S11–S12 — bank menu practice'],
+ triangle:['Unit 1 · S10 — switch vs if...else if...else','Unit 1 · S11–S12 — triangle type practice'],
+ decomposition:['Unit 2 · S1 — problem decomposition into smaller sub-tasks','Unit 2 · S3–S4 — scorecard and sub-task guided practice'],
+ passvalue:['Unit 2 · S2 — pass-by-value','Unit 2 · S3–S4 — sum of first n even numbers'],
+ pointers:['Unit 2 · S5 — pointer concepts and pointer variables','Unit 2 · S2 — pass-by-reference concept'],
+ helpers:['Unit 2 · S6 — helper functions and return values','Unit 2 · S7–S8 — modular helper-function practice'],
+ modular:['Unit 2 · S6 — modular solution design','Unit 2 · S7–S8 — marks and temperature conversion helpers'],
+ recursion:['Unit 2 · S9 — recursive thinking','Unit 2 · S10 — factorial, Fibonacci, digit count and GCD'],
+ stack:['Unit 2 · S11–S12 — call-stack tracing, recursive reverse, GCD and palindrome','Unit 2 · S11–S12 — recursive maximum, vowel count and string reverse']
+};
+const LAB_MAP={
+ inputoutput:[],datatypes:[],expressions:[{num:'1(a)',title:'Program to evaluate and display a = a + b * c; b = a / c; c = b + a.'}],
+ swapping:[{num:'1(b)',title:'Program to apply operator precedence rules and perform variable swapping with and without temporary variables.'}],
+ ifelse:[{num:'2',title:'Boolean-logic classification programs: Odd/Even + Positive/Negative/Zero; Vowel/Consonant; Leap Year; Alphabet/Digit/Special Symbol; Loan Eligibility; Scholarship Eligibility.'}],
+ boolean:[{num:'2',title:'Program using boolean logic to categorize or classify the six required cases.'}],
+ switch:[{num:'3(a)',title:'Menu-driven bank program using switch: Deposit, Withdraw, Check Balance, Exit.'}],
+ triangle:[{num:'3(b)',title:'Determine triangle type using switch and compare with if...else if...else.'}],
+ decomposition:[{num:'4(a)',title:'Using pass-by-value, design a function to compute the sum of the first n even numbers by breaking the problem into sub-tasks.'},{num:'4(b)',title:'Implement a modular program that calculates the total marks, average, and grade of a student.'}],
+ passvalue:[{num:'4(a)',title:'Using pass-by-value, design a function to compute the sum of the first n even numbers by breaking the problem into sub-tasks.'}],
+ pointers:[{num:'4(a)',title:'Pass-by-value task + pointer/reference concept needed to understand modifying original variables.'}],
+ helpers:[{num:'5(a)',title:'Use separate helper functions for calculateTotal(), calculateAverage(), and findGrade.'}],
+ modular:[{num:'4(b)',title:'Implement a modular program that calculates the total marks, average, and grade of a student.'},{num:'5(b)',title:'Implement helper functions for Celsius→Fahrenheit, Fahrenheit→Celsius, and Celsius→Kelvin.'}],
+ recursion:[{num:'6',title:'Recursive reverse of a number; recursive GCD using Euclid’s algorithm; recursive palindrome checking.'}],
+ stack:[{num:'6(a)',title:'Recursive reverse number with valid and corner-case inputs.'},{num:'6(b)',title:'Recursive GCD using Euclid’s algorithm.'},{num:'6(c)',title:'Recursive palindrome check.'},{num:'7(a)',title:'Recursive maximum element in an integer array.'},{num:'7(b)',title:'Recursive vowel count in a string.'},{num:'7(c)',title:'Recursive string reverse using a helper function if required.'}]
+};
+let state={student:null,active:'dashboard',topic:null,done:{},quiz:{},practice:{},lastSeen:{},notes:{},feedback:[]};
+const ALL=()=>[...UNIT1,...UNIT2];
+function keyFor(roll){return 'cquest:student:'+String(roll).trim().toUpperCase().replace(/\s+/g,'');}
+function localLoad(roll){try{return JSON.parse(localStorage.getItem(keyFor(roll))||'null')}catch{return null}}
+function localSave(){if(!state.student)return;localStorage.setItem(keyFor(state.student.roll),JSON.stringify(state))}
+function toast(t){let e=document.getElementById('toast');e.textContent=t;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2300)}
+async function api(path,body){try{let r=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});if(!r.ok)throw new Error('api');return await r.json()}catch(e){return null}}
+async function loginStudent(){
+  const name=document.getElementById('loginName').value.trim(), roll=document.getElementById('loginRoll').value.trim();
+  if(!name||!roll){document.getElementById('loginMsg').textContent='Please enter both name and roll number.';return}
+  const existing=localLoad(roll); const server=await api('/api/student',{action:'login',name,roll});
+  const incoming=server?.student?.state || existing;
+  if(incoming){
+    state={student:{name,roll},active:'dashboard',topic:null,tab:'learn',done:{},quiz:{},practice:{},lastSeen:{},notes:{},feedback:[],...incoming};
+    state.student={name,roll}; state.done=state.done||{}; state.quiz=state.quiz||{}; state.practice=state.practice||{}; state.lastSeen=state.lastSeen||{}; state.feedback=state.feedback||[];
+  }else state={student:{name,roll},active:'dashboard',topic:null,tab:'learn',done:{},quiz:{},practice:{},lastSeen:{},notes:{},feedback:[]};
+  localSave(); await api('/api/student',{action:'save',student:state.student,state});
+  document.getElementById('login').classList.remove('open'); document.getElementById('app').classList.remove('hidden'); renderAll();
+}
+function logoutStudent(){localSave();state={student:null,active:'dashboard',topic:null,done:{},quiz:{},practice:{},lastSeen:{},notes:{},feedback:[]};document.getElementById('app').classList.add('hidden');document.getElementById('login').classList.add('open');document.getElementById('loginName').value='';document.getElementById('loginRoll').value='';}
+function progress(){let total=ALL().length,done=Object.keys(state.done).filter(k=>state.done[k]).length;return Math.round(done/total*100)}
+function updateProgress(){let p=progress();document.getElementById('progressText').textContent=p+'% complete';document.getElementById('progressPct').textContent=p+'%';document.getElementById('progressFill').style.width=p+'%'}
+function nav(){[['nav1',UNIT1],['nav2',UNIT2]].forEach(([id,arr])=>document.getElementById(id).innerHTML=arr.map(t=>`<button class="${state.topic===t.id?'active ':''}${state.done[t.id]?'done':''}" onclick="openTopic('${t.id}')">${t.icon} ${t.title}</button>`).join(''))}
+function syncStudentHeader(){
+  if(!state.student)return;
+  const n=document.getElementById('studentName'),r=document.getElementById('studentRoll');
+  if(n)n.textContent=state.student.name||'Student'; if(r)r.textContent='Roll No. '+(state.student.roll||'—');
+}
+function renderAll(){syncStudentHeader();updateProgress();nav();if(state.active==='dashboard')showDashboard(false);else if(state.active==='report')showReport(false);else openTopic(state.topic,false)}
+function showDashboard(save=true){
+  state.active='dashboard'; state.topic=null; state.tab='learn'; if(save)localSave(); syncStudentHeader(); nav(); updateProgress();
+  const p=progress(), next=ALL().find(t=>!state.done[t.id])||ALL()[ALL().length-1], u1=UNIT1.filter(t=>state.done[t.id]).length, u2=UNIT2.filter(t=>state.done[t.id]).length;
+  document.getElementById('report').classList.add('hidden'); document.getElementById('content').classList.add('hidden');
+  const d=document.getElementById('dashboard'); d.classList.remove('hidden'); d.style.display='block';
+  d.innerHTML=`<div class="dashboard-shell">
+    <div class="welcome-hero">
+      <div class="welcome-card"><span class="welcome-kicker">C QUEST · YOUR LEARNING SPACE</span><h2>Hey ${escapeHtml(state.student?.name||'there')} 👋<br>Ready for your next quest?</h2><p>Learn C one small step at a time. Understand the idea first, see the lab program, write your own code, and finish with a quick quiz.</p>
+        <div class="resume-box"><small>Continue where you left off</small><b>${next.icon} ${escapeHtml(next.title)}</b><div style="color:var(--muted);font-size:12px;margin-top:3px">${state.done[next.id]?'Review this topic':'This is your next unfinished topic'}</div></div>
+        <div class="row" style="margin-top:16px;display:flex;gap:9px;flex-wrap:wrap"><button class="btn" onclick="openTopic('${next.id}')">Continue learning →</button><button class="btn secondary" onclick="showReport()">📊 My report</button></div>
+      </div>
+      <div class="quick-stats"><div class="quick-stat"><div class="num">${p}%</div><small>Overall journey</small></div><div class="quick-stat"><div class="num">${u1}/${UNIT1.length}</div><small>Unit 1 topics</small></div><div class="quick-stat"><div class="num">${u2}/${UNIT2.length}</div><small>Unit 2 topics</small></div><div class="quick-stat"><div class="num">${Object.values(state.practice||{}).filter(x=>x.attempted).length}</div><small>Compiler practices</small></div></div>
+    </div>
+    <div><div class="section-title"><div><h2>Choose your quest</h2><p>Two units · one clear path from basics to recursion</p></div></div>
+      <div class="unit-grid">
+        <div class="unit-card" onclick="openUnit('unit1')"><div class="unit-icon">📘</div><h3>Unit 1 · Foundations</h3><p>Build your C basics: data types, expressions, decisions, Boolean logic, input/output and switch.</p><div class="unit-meta"><span>8 topics</span><span>Exercises 1–3</span><span>Start here</span></div></div>
+        <div class="unit-card" onclick="openUnit('unit2')"><div class="unit-icon">🧠</div><h3>Unit 2 · Functions & Recursion</h3><p>Break big problems into smaller jobs, understand pointers and functions, then master recursion.</p><div class="unit-meta"><span>${UNIT2.length} topics</span><span>Exercises 4–7</span><span>Build skills</span></div></div>
+      </div>
+    </div>
+    <div><div class="section-title"><div><h2>Your learning path</h2><p>Every topic follows the same four-step rhythm.</p></div></div>
+      <div class="learning-flow"><div class="flow-card"><div class="flow-icon">📖</div><b>1 · Learn</b><span>Simple theory, examples and real-life analogies.</span></div><div class="flow-card"><div class="flow-icon">🧪</div><b>2 · Lab</b><span>Open the exact matching experiment from your lab manual.</span></div><div class="flow-card"><div class="flow-icon">💻</div><b>3 · Practice</b><span>Write, run and test C code in the online compiler.</span></div><div class="flow-card"><div class="flow-icon">🧠</div><b>4 · Quiz</b><span>Check what you understood and save your score.</span></div></div>
+    </div>
+  </div>`;
+}
+function openUnit(u){let arr=u==='unit1'?UNIT1:UNIT2;openTopic(arr[0].id)}
+function openTopic(id,save=true){let t=ALL().find(x=>x.id===id);if(!t)return;let sameTopic=state.topic===id;state.active='topic';state.topic=id;state.tab=sameTopic?(state.tab||'learn'):'learn';state.lastSeen[id]=Date.now();compilerTopicId=id;if(save)localSave();nav();updateProgress();syncStudentHeader();document.getElementById('dashboard').classList.add('hidden');document.getElementById('report').classList.add('hidden');let c=document.getElementById('content');c.innerHTML=topicHtml(t);c.classList.remove('hidden');setTimeout(()=>topicTab(state.tab||'learn'),0);window.scrollTo({top:0,behavior:'smooth'});}
+function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function renderCode(code){let rows=(code?.lines||[]).map((r,i)=>{let text=Array.isArray(r)?r[0]:r,exp=Array.isArray(r)?r[1]:'';return `<div class="code-row"><div class="ln">${i+1}</div><div><pre>${escapeHtml(text)}</pre>${exp?`<div class="explain">💡 ${escapeHtml(exp)}</div>`:''}</div></div>`}).join('');return `<div class="code-card"><div class="code-head"><b>💻 ${escapeHtml(code.name||'C program')}</b><button class="pill" onclick="this.closest('.code-card').classList.toggle('explained')">Show / hide explanations</button></div>${rows}</div>${code.io?`<div class="io">Sample run
+${escapeHtml(code.io)}</div>`:''}`}
+function labsFor(t){return LAB_MAP[t.id]||[]}
+function labPanelHtml(t){
+  const labs=labsFor(t);
+  if(!labs.length && !t.code) return `<div class="empty-state">📘 No direct lab experiment is attached to this topic in the supplied lab manual. Learn the concept here, then use Practice to apply it.</div>`;
+  let html='';
+  if(labs.length){html += `<div class="lab-stack">${labs.map(x=>`<div class="lab-program"><span class="lab-exact">EXERCISE ${escapeHtml(x.num)}</span><h4>${escapeHtml(x.title)}</h4><p style="color:var(--muted);font-size:13px">This is the matching experiment from the PPS lab manual. Keep this experiment number when preparing your record.</p></div>`).join('')}</div>`;}
+  if(t.code){html += `<div class="section" style="margin-top:14px"><div class="eyebrow">LAB WALKTHROUGH</div><h3>${escapeHtml(t.code.name||'C Program')}</h3><p style="color:var(--muted);line-height:1.7">${escapeHtml(t.code.overview||'Follow the program, understand each line, then run it yourself in the compiler below.')}</p>${renderCode(t.code)}${t.code.io?`<div class="io">Sample run\n${escapeHtml(t.code.io)}</div>`:''}</div>`;}
+  return html;
+}
+function quizHtml(t){
+  if(!t.quiz?.length)return `<div class="empty-state">🧠 Quiz coming for this topic.</div>`;
+  const saved=state.quiz[t.id]||{answers:{}};
+  return `<div class="quiz"><div class="qnum">QUICK CHECK · ${escapeHtml(t.title)}</div><h3>Check your understanding</h3><p style="color:var(--muted)">Try each question. Your score is saved automatically.</p>${t.quiz.map((qq,i)=>{
+    const q=Array.isArray(qq)?{text:qq[0],opts:qq[1],answer:qq[2],explain:qq[3]}:{text:qq.q,opts:qq.opts,answer:qq.answer,explain:qq.explain};
+    const selected=saved.answers?.[i];
+    const coach=selected!==undefined?`<div class="coach">${selected===q.answer?'✅ Nice!':'🧠 Not quite yet.'} ${escapeHtml(q.explain||'Check the concept and try again.')}</div>`:'';
+    return `<div id="q-${t.id}-${i}" style="margin:22px 0;padding-top:10px;border-top:1px dashed var(--line)"><b>${i+1}. ${escapeHtml(q.text||'')}</b><div class="quiz-options">${(q.opts||[]).map((o,j)=>`<button class="option ${selected!==undefined&&selected===j?'selected':''}" onclick="answer('${t.id}',${i},${j})">${escapeHtml(o)}</button>`).join('')}</div><div id="coach-${t.id}-${i}">${coach}</div></div>`;
+  }).join('')}</div>`;
+}
+function syllabusSessions(t){return t.sessions||SESSION_MAP[t.id]||[]}
+function coverageHtml(t){let ss=syllabusSessions(t);if(!ss.length)return '';return `<div class="session-strip">${ss.map(s=>{let m=s.match(/(S\\d+(?:–S\\d+)?)/);return `<span class="session-chip">${m?'<strong>'+escapeHtml(m[1])+'</strong> · ':''}${escapeHtml(s.replace(/^Unit [12] · S\\d+(?:–S\\d+)? · /,'').replace(/^Unit [12] · S\\d+ · /,''))}</span>`}).join('')}</div>`}
+function starterCode(t){if(t.practice?.starter)return t.practice.starter;if(t.code?.lines)return t.code.lines.map(r=>Array.isArray(r)?r[0]:r).join('\n').replace(/\n{3,}/g,'\n\n');return '#include <stdio.h>\n\nint main() {\n    // Start writing your solution here\n    return 0;\n}';}
+function practiceHtml(t){let p=t.challenge||t.practice;if(!p)return `<div class="empty-state">🎯 No separate challenge is attached yet. You can still use the lab program above for hands-on practice.</div>`;return `<div class="practice-card"><div class="eyebrow">PRACTICE MISSION</div><h3>${escapeHtml(p.title||'Practice Mission')}</h3>${p.prompt?`<div style="color:var(--muted);line-height:1.7;margin-top:8px">${p.prompt}</div>`:''}${p.sample?`<div class="io">Sample target\n${escapeHtml(p.sample)}</div>`:''}<div class="compiler-shell"><div class="compiler-top"><div><h3>💻 C Playground</h3><p><span class="status-dot live"></span>Write · Run · Test</p></div><div class="compiler-actions"><button class="pill" onclick="loadCompiler('${t.id}')">↻ Load starter</button><button class="btn secondary" onclick="runCompiler()">▶ Run</button></div></div><iframe id="compilerFrame" class="compiler-frame" title="Online C compiler" src="https://onecompiler.com/embed/c?listenToEvents=true"></iframe><div class="compiler-note">Practice code runs in the embedded online compiler. Your C Quest progress is saved separately.</div></div></div>`}
+function topicHtml(t){
+  let unit=UNIT1.includes(t)?'UNIT 1 · FOUNDATIONS':'UNIT 2 · FUNCTIONS & RECURSION';
+  const labs=labsFor(t);
+  return `<article class="topic active"><div class="topic-head"><div class="topic-intro"><div><div class="eyebrow">${unit} · TOPIC ${t.num}</div><h2>${t.icon} ${escapeHtml(t.title)}</h2><p>${escapeHtml(t.tagline||t.short||'')}</p></div><div class="topic-kicker"><b>${state.done[t.id]?'✓ Done':'Step-by-step'}</b><span>${labs.length?escapeHtml(labs.length+' matching lab program'+(labs.length>1?'s':'')):'Concept-first learning'}</span></div></div>${coverageHtml(t)}</div><div class="lesson-shell"><div class="lesson-tabs"><button class="lesson-tab active" data-tab="learn" onclick="topicTab('learn')">📖 Learn</button><button class="lesson-tab" data-tab="lab" onclick="topicTab('lab')">🧪 Lab</button><button class="lesson-tab" data-tab="practice" onclick="topicTab('practice')">💻 Practice</button><button class="lesson-tab" data-tab="quiz" onclick="topicTab('quiz')">🧠 Quiz</button></div><section id="tab-learn" class="lesson-panel active"><div class="section">${t.concept||'<div class="empty-state">Explanation not available yet.</div>'}</div></section><section id="tab-lab" class="lesson-panel"><div class="section"><div class="eyebrow">MATCHED TO THE LAB MANUAL</div><h3>Do this after learning the concept</h3>${labPanelHtml(t)}</div></section><section id="tab-practice" class="lesson-panel"><div class="section">${practiceHtml(t)}</div></section><section id="tab-quiz" class="lesson-panel"><div class="section">${quizHtml(t)}</div></section></div><div class="finish-card"><div><div class="eyebrow">TOPIC CHECKPOINT</div><h3 style="margin:5px 0">Ready to save this milestone?</h3><p style="margin:0;color:var(--muted);font-size:13px">You can revisit any section later. Your progress stays attached to your roll number.</p></div><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" onclick="completeTopic('${t.id}')">${state.done[t.id]?'✓ Completed':'Mark complete'}</button><button class="btn secondary" onclick="showReport()">📊 Report</button></div></div></article>`
+}
+function topicTab(tab){state.tab=tab;localSave();document.querySelectorAll('.lesson-tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));document.querySelectorAll('.lesson-panel').forEach(p=>p.classList.toggle('active',p.id==='tab-'+tab));if(tab==='practice'){setTimeout(()=>loadCompiler(compilerTopicId||state.topic),350)}}
+
+let compilerTopicId=null;let compilerReady=false;
+window.addEventListener('message',function(e){if(e.data&&typeof e.data==='object'&&(e.data.eventType==='ready'||e.data.type==='ready'))compilerReady=true;});
+function compilerPost(message){let f=document.getElementById('compilerFrame');if(f?.contentWindow)f.contentWindow.postMessage(message,'*')}
+function loadCompiler(id){let t=ALL().find(x=>x.id===id);if(!t)return;compilerTopicId=id;compilerPost({eventType:'populateCode',language:'c',files:[{name:'main.c',content:starterCode(t)}]});toast('Starter code loaded into the compiler ✓')}
+function runCompiler(){compilerPost({eventType:'triggerRun'});if(compilerTopicId){state.practice=state.practice||{};state.practice[compilerTopicId]={...(state.practice[compilerTopicId]||{}),attempted:true,lastRun:Date.now()};localSave();api('/api/student',{action:'save',student:state.student,state});toast('Running your C program…');}}
+function answer(id,qi,choice){let t=ALL().find(x=>x.id===id),raw=t?.quiz?.[qi];if(!raw)return;let q=Array.isArray(raw)?{answer:raw[2],explain:raw[3]}:raw,box=document.getElementById('coach-'+id+'-'+qi);let ok=choice===q.answer;state.quiz[id]=state.quiz[id]||{answers:{},score:0};const previous=state.quiz[id].answers?.[qi];if(previous===undefined&&ok)state.quiz[id].score=(state.quiz[id].score||0)+1;state.quiz[id].answers[qi]=choice;if(box)box.innerHTML=`<div class="coach">${ok?'✅ Nice!':'🧠 Not quite yet.'} ${escapeHtml(q.explain||'Check the concept and try again.')}</div>`;document.querySelectorAll(`#q-${id}-${qi} .option`).forEach((b,j)=>b.classList.toggle('selected',j===choice));localSave();api('/api/student',{action:'save',student:state.student,state});}
+function completeTopic(id){state.done[id]=true;state.lastSeen[id]=Date.now();localSave();api('/api/student',{action:'save',student:state.student,state});toast('Saved ✓ Your progress will be here next time.');nav();updateProgress();openTopic(id,false)}
+function showReport(save=true){state.active='report';state.topic=null;if(save)localSave();nav();document.getElementById('dashboard').classList.add('hidden');document.getElementById('content').classList.add('hidden');let r=document.getElementById('report');r.classList.remove('hidden');let p=progress();r.innerHTML=`<div class="topic-head"><div class="eyebrow">PERSISTENT STUDENT RECORD</div><h2>📊 My Report</h2><p>This report belongs to <b>${escapeHtml(state.student.name)}</b> · ${escapeHtml(state.student.roll)}. It is rebuilt from the saved progress record every time you log in.</p></div><div class="report-grid"><div class="report-card"><b>${p}%</b><div>Overall progress</div></div><div class="report-card"><b>${UNIT1.filter(t=>state.done[t.id]).length}/${UNIT1.length}</b><div>Unit 1 topics complete</div></div><div class="report-card"><b>${UNIT2.filter(t=>state.done[t.id]).length}/${UNIT2.length}</b><div>Unit 2 topics complete</div></div><div class="report-card"><b>${Object.values(state.quiz).reduce((n,q)=>n+(q.score||0),0)}</b><div>Correct quiz answers</div></div><div class="report-card"><b>${Object.values(state.practice||{}).filter(x=>x.attempted).length}</b><div>Topics practiced in compiler</div></div></div><div class="section"><h3>Topic-by-topic progress</h3><table class="report-table"><tr><th>Unit</th><th>Topic</th><th>Status</th><th>Quiz</th><th>Compiler</th></tr>${ALL().map(t=>`<tr><td>${UNIT1.includes(t)?'1':'2'}</td><td>${t.icon} ${escapeHtml(t.title)}</td><td>${state.done[t.id]?'✅ Complete':'— In progress'}</td><td>${state.quiz[t.id]?.score||0}/${t.quiz?.length||0}</td><td>${state.practice?.[t.id]?.attempted?'▶ Practiced':'—'}</td></tr>`).join('')}</table></div><div class="section"><h3>Report actions</h3><div class="row" style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" onclick="downloadReport()">⬇️ Download report</button><button class="btn secondary" onclick="copyReport()">📋 Copy report</button></div></div>`}
+function reportText(){let lines=['C QUEST — PPS STUDENT PROGRESS REPORT','========================================',`Name: ${state.student.name}`,`Roll Number: ${state.student.roll}`,`Generated: ${new Date().toLocaleString()}`,'',`Overall progress: ${progress()}%`,''];ALL().forEach(t=>lines.push(`${UNIT1.includes(t)?'Unit 1':'Unit 2'} · ${t.num}. ${t.title} — ${state.done[t.id]?'Complete':'In progress'} — Quiz ${state.quiz[t.id]?.score||0}/${t.quiz?.length||0}`));return lines.join('\n')}
+function downloadReport(){let b=new Blob([reportText()],{type:'text/plain'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=`C_Quest_${state.student.roll}_Report.txt`;a.click();URL.revokeObjectURL(u)}
+function copyReport(){navigator.clipboard?.writeText(reportText()).then(()=>toast('Report copied ✓')).catch(()=>toast('Copy is unavailable; use Download report.'))}
+function openFeedback(){document.getElementById('feedback').classList.add('open')};function closeFeedback(){document.getElementById('feedback').classList.remove('open')}
+async function submitFeedback(){let type=document.getElementById('fbType').value,text=document.getElementById('fbText').value.trim();if(!text){toast('Please describe the problem first.');return}let item={type,text,topic:state.topic||'dashboard',at:new Date().toISOString()};state.feedback.push(item);localSave();await api('/api/feedback',{student:state.student,feedback:item});document.getElementById('fbText').value='';closeFeedback();toast('Problem report saved ✓')}
+function searchTopics(){let q=document.getElementById('search').value.trim().toLowerCase();if(!q){nav();return}let hits=ALL().filter(t=>(t.title+' '+t.short+' '+t.tagline+' '+(t.concept||'')).toLowerCase().includes(q));document.getElementById('nav1').innerHTML=hits.filter(t=>UNIT1.includes(t)).map(t=>`<button onclick="openTopic('${t.id}')">${t.icon} ${t.title}</button>`).join('')||'<span style="color:var(--faint);font-size:12px;padding:8px">No matches</span>';document.getElementById('nav2').innerHTML=hits.filter(t=>UNIT2.includes(t)).map(t=>`<button onclick="openTopic('${t.id}')">${t.icon} ${t.title}</button>`).join('')}
+window.addEventListener('beforeunload',()=>localSave());
+</script></body></html>
